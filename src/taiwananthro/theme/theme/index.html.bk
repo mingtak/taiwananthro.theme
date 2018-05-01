@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>臺灣人類學與民族學學會 | Taiwan Society for Anthropology and Ethnology</title>
+<!-- Stylesheets -->
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<link href="css/responsive.css" rel="stylesheet">
+
+<!--Color Themes-->
+<link id="theme-color-file" href="css/color-themes/default-theme.css" rel="stylesheet">
+
+<!--Favicon-->
+<link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+<link rel="icon" href="images/favicon.png" type="image/x-icon">
+<!-- Responsive -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+<!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+<style type="text/css">
+<!--
+.style1 {color: #FFFFFF}
+-->
+</style>
+</head>
+
+
+<body>
+
+<div class="page-wrapper">
+ 	
+    <!-- Preloader -->
+    <div class="preloader"></div>
+ 	
+    <!-- Main Header -->
+    <header class="main-header">
+    	<!--Header Top-->
+    	<div class="header-top">
+            <div class="auto-container">
+                <div class="clearfix">
+                    <!--Top Left-->
+                    <div class="top-left col-md-4 col-sm-12 col-xs-12">
+                    	<div class="trend">．最新消息: </div>
+                        <div class="single-item-carousel owl-carousel owl-theme news_banner">
+                        	<div class="slide">
+                            	<div class="text">【學會公告】2018年「臺灣人類學與民族學...</div>
+                            </div>
+                            <div class="slide">
+                            	<div class="text">【學會公告】本會理事長暨秘書處完成交接</div>
+                            </div>
+                            <div class="slide">
+                            	<div class="text">【學會公告】恭賀林文玲教授獲選為臺灣人類...</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Top Right-->
+
+                    <div class="top-right pull-right col-md-8 col-sm-12 col-xs-12">
+                        <ul class="top-nav">
+                            <li><a href="${abr_url}">會員登入</a></li>
+                            <li><a href="#">訂閱電子報</a></li>
+                        </ul>
+                        <ul class="english-nav">
+                        	<li class="active"><a href="#">繁體</a></li>
+                            <li><a href="#">簡體</a></li>
+                            <li><a href="#">English</a></li>
+                        </ul>
+                        <ul class="social-nav">
+                        	<li><a href="#"><span class="fa fa-facebook-square"></span></a></li>
+                            <li><a href="#"><span class="fa fa-google-plus"></span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    	<!--Header-Upper-->
+        <div class="header-upper">
+        	<div class="auto-container">
+            	<div class="clearfix">
+                	
+                	<div class="pull-left logo-outer">
+                    	<div class="logo"><a href="index.html"></a></div>
+                    </div>
+                    
+                    <div class="pull-right upper-right clearfix">
+                    	<div class="add-image">
+                        	<a href="#"><img src="images/resource/header-add.png" alt="" /></a>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <!--End Header Upper-->
+        
+        <!--Header Lower-->
+        <div class="header-lower">
+        	<div class="auto-container">
+            	<div class="nav-outer clearfix">
+                    <!-- Main Menu -->
+                    <nav class="main-menu">
+                        <div class="navbar-header">
+                            <!-- Toggle Button -->    	
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        
+                        <div class="navbar-collapse collapse clearfix" id="bs-example-navbar-collapse-1">
+                            
+                        </div>
+                    </nav>
+                    <!-- Main Menu End-->
+                    <div class="outer-box">
+                        
+                        <!--Search Box-->
+                        <div class="search-box-outer">
+                            <div class="dropdown">
+                                <button class="search-box-btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="fa fa-search"></span></button>
+                                <ul class="dropdown-menu pull-right search-panel" aria-labelledby="dropdownMenu1">
+                                    <li class="panel-outer">
+                                        <div class="form-container">
+                                            <form method="post" action="blog.html">
+                                                <div class="form-group">
+                                                    <input type="search" name="field-name" value="" placeholder="請輸入關鍵字搜尋" required>
+                                                    <button type="submit" class="search-btn"><span class="fa fa-search"></span></button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                    <!-- Hidden Nav Toggler -->
+                     <div class="nav-toggler">
+                         <button class="hidden-bar-opener"><span class="icon qb-menu1"></span></button>
+                     </div>
+                    
+                </div>
+            </div>
+        </div>
+        <!--End Header Lower-->
+    	
+        <!--Sticky Header-->
+        <div class="sticky-header">
+            <div class="auto-container clearfix">
+                <!--Logo-->
+                <div class="logo pull-left">
+                    <a href="index.html" class="img-responsive" title=""></a>
+                </div>
+                
+                <!--Right Col-->
+                <div class="right-col pull-right">
+                    <!-- Main Menu -->
+                    <nav class="main-menu">
+                        <div class="navbar-header">
+                            <!-- Toggle Button -->    	
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        
+                        <div class="navbar-collapse collapse clearfix">
+                            <ul class="navigation clearfix">
+                                <li class="current dropdown"><a href="#">關於本會</a>
+                                    <ul>
+                                        <li><a href="#">學會簡介</a></li>
+                                        <li><a href="#">臺灣人類學與民族學學會章程</a></li>
+                                        <li><a href="#">學會組織</a></li>
+                                        <li><a href="#">會員大會會議紀錄</a></li>
+                                        <li><a href="#">獎學金</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown"><a href="#">最新消息</a>
+                                    <ul>
+                                        <li><a href="#">活動</a></li>
+                                        <li><a href="#">演講</a></li>
+                                        <li><a href="#">學會新聞</a></li>
+                                        <li><a href="#">獎助學金</a></li>
+                                        <li><a href="#">徵人啟事</a></li>
+                                        <li><a href="#">人類學界相關新聞</a></li>
+                                        <li><a href="#">人類學相關學術刊物當期目錄</a></li>
+                                        <li><a href="#">國科會通過之人類學門計畫等</a></li>
+                                        <li><a href="#">相關學術公共政策</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">年會活動</a></li>
+                                <li class="dropdown"><a href="#">研究出版</a>
+                                    <ul>
+                                        <li><a href="#">人類學視界</a></li>
+                                        <li><a href="#">人類學相關學術刊物當期目錄</a></li>
+                                        <li><a href="#">團體會員碩博士論文名錄</a></li>
+                                        <li><a href="#">學會贊助計畫</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown"><a href="#">學術倫理</a>
+                                    <ul>
+                                        <li><a href="#">倫理規範</a></li>
+                                        <li><a href="#">倫理審查相關規定</a></li>
+                                        <li><a href="#">「研究倫理審查制度」建置的聲明</a></li>
+                                        <li><a href="#">倫理規範 FAQs</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown"><a href="#">會員專區</a>
+                                    <ul>
+                                        <li><a href="#">會員簡介</a></li>
+                                        <li><a href="#">會員登入</a></li>
+                                        <li><a href="#">註冊新會員</a></li>
+                                        <li><a href="#">忘記密碼</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">相關網站</a></li>
+                                <li><a href="contact.html">聯絡我們</a></li>
+                            </ul>
+                        </div>
+                    </nav><!-- Main Menu End-->
+                </div>
+                
+            </div>
+        </div>
+        <!--End Sticky Header-->
+        
+    </header>
+    <!--End Header Style Two -->
+    
+    <!-- Hidden Navigation Bar -->
+    <section class="hidden-bar left-align">
+        
+        <div class="hidden-bar-closer">
+            <button><span class="qb-close-button"></span></button>
+        </div>
+        
+        <!-- Hidden Bar Wrapper -->
+        <div class="hidden-bar-wrapper">
+            <div class="logo">
+            	<a href="index.html"></a>
+            </div>
+            <!-- .Side-menu -->
+            <div class="side-menu">
+            	<!--navigation-->
+                <ul class="navigation clearfix">
+                        <li class="current dropdown"><a href="#">關於本會</a>
+                                    <ul>
+                                        <li><a href="#">學會簡介</a></li>
+                                        <li><a href="#">臺灣人類學與民族學學會章程</a></li>
+                                        <li><a href="#">學會組織</a></li>
+                                        <li><a href="#">會員大會會議紀錄</a></li>
+                                        <li><a href="#">獎學金</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown"><a href="#">最新消息</a>
+                                    <ul>
+                                        <li><a href="#">活動</a></li>
+                                        <li><a href="#">演講</a></li>
+                                        <li><a href="#">學會新聞</a></li>
+                                        <li><a href="#">獎助學金</a></li>
+                                        <li><a href="#">徵人啟事</a></li>
+                                        <li><a href="#">人類學界相關新聞</a></li>
+                                        <li><a href="#">人類學相關學術刊物當期目錄</a></li>
+                                        <li><a href="#">國科會通過之人類學門計畫等</a></li>
+                                        <li><a href="#">相關學術公共政策</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">年會活動</a></li>
+                                <li class="dropdown"><a href="#">研究出版</a>
+                                    <ul>
+                                        <li><a href="#">人類學視界</a></li>
+                                        <li><a href="#">人類學相關學術刊物當期目錄</a></li>
+                                        <li><a href="#">團體會員碩博士論文名錄</a></li>
+                                        <li><a href="#">學會贊助計畫</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown"><a href="#">學術倫理</a>
+                                    <ul>
+                                        <li><a href="#">倫理規範</a></li>
+                                        <li><a href="#">倫理審查相關規定</a></li>
+                                        <li><a href="#">「研究倫理審查制度」建置的聲明</a></li>
+                                        <li><a href="#">倫理規範 FAQs</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown"><a href="#">會員專區</a>
+                                    <ul>
+                                        <li><a href="#">會員簡介</a></li>
+                                        <li><a href="#">會員登入</a></li>
+                                        <li><a href="#">註冊新會員</a></li>
+                                        <li><a href="#">忘記密碼</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">相關網站</a></li>
+                                <li><a href="contact.html">聯絡我們</a></li>
+                 </ul>
+            </div>
+            <!-- /.Side-menu -->
+            
+            <!--Options Box-->
+            <div class="options-box">
+            	<!--Sidebar Search-->
+                <div class="sidebar-search">
+                    <form method="post" action="contact.html">
+                        <div class="form-group">
+                            <input type="search" name="text" value="" placeholder="請輸入關鍵字搜尋" required>
+                            <button type="submit" class="theme-btn"><span class="fa fa-search"></span></button>
+                        </div>
+                    </form>
+                </div>
+                
+                <!--Language Dropdown-->
+                <div class="language dropdown"><a class="btn btn-default dropdown-toggle" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" href="#">選擇語系<span class="icon fa fa-angle-down"></span></a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                        <li><a href="#">繁體</a></li>
+                        <li><a href="#">簡體</a></li>
+                        <li><a href="#">English</a></li>
+                    </ul>
+                </div>
+                
+                <!--Social Links-->
+                <ul class="social-links clearfix">
+                    <li><a href="#"><span class="fa fa-facebook-square"></span></a></li>
+                    <li><a href="#"><span class="fa fa-google-plus"></span></a></li>             
+                </ul>
+                
+            </div>
+            
+        </div><!-- / Hidden Bar Wrapper -->
+        
+    </section>
+    <!-- End / Hidden Bar -->
+    
+    <!--Main Slider Three-->
+    <section class="main-slider-three">
+    	<div class="single-item-carousel owl-carousel owl-theme banner">
+            <!--Slide-->
+            <div class="news-block-six">
+                <div class="inner-box">
+                    <div class="image-box">
+                        <div class="image">
+                            <img src="images/main-slider/1.jpg" alt="" />
+                          
+
+ 			   
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Slide-->
+            <div class="news-block-six">
+                <div class="inner-box">
+                    <div class="image-box">
+                        <div class="image">
+                            <img src="images/main-slider/2.jpg" alt="" />
+                            <div class="overlay-box">
+                                <div class="overlay-inner">
+                                    <div class="content">
+                                        <h2><a href="#">黃曉明 攝影</a></h2>
+                                        <div class="post-date">2018-03-30</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                        <!--Slide-->
+            <div class="news-block-six">
+                <div class="inner-box">
+                    <div class="image-box">
+                        <div class="image">
+                            <img src="images/main-slider/3.jpg" alt="" />
+                            <div class="overlay-box">
+                                <div class="overlay-inner">
+                                    <div class="content">
+                                        <h2><a href="#">黃曉明 攝影</a></h2>
+                                        <div class="post-date">2018-03-30</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Slide-->
+            <div class="news-block-six">
+                <div class="inner-box">
+                    <div class="image-box">
+                        <div class="image">
+                            <img src="images/main-slider/4.jpg" alt="" />
+                            <div class="overlay-box">
+                                <div class="overlay-inner">
+                                    <div class="content">
+                                        <h2><a href="#">黃曉明 攝影</a></h2>
+                                        <div class="post-date">2018-03-30</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </section>
+    <!--End Main Slider-->
+    
+    <!--Sidebar Page Container-->
+    <div class="sidebar-page-container">
+    	<div class="auto-container">
+        	<div class="row clearfix">
+            	
+                               <!--Sidebar Side-->
+                <div class="sidebar-side col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <div class="sidebar-widget categories-widget">
+                            <div class="sidebar-title">
+                                <h2>最新消息</h2>
+                            </div>
+                            <ul class="cat-list">
+                            	<li class="clearfix"><a href="#">2018年「臺灣人類學與民族學學會碩... <span>【學會公告】</span></a></li>
+                                <li class="clearfix"><a href="#">本會理事長暨秘書處完成交接<span>【學會公告】</span></a></li>
+                                <li class="clearfix"><a href="#">恭賀林文玲教授獲選為臺灣人類學與...<span>【學會公告】</span></a></li>
+                                <li class="clearfix"><a href="#">清大人類所徵才訊息<span>【訊息代轉】</span></a></li>
+                                <li class="clearfix"><a href="#">臺灣人類學與民族學學會第29屆理監...<span>【學會公告】</span></a></li>
+                            	<li class="clearfix"><a href="#">2018年「臺灣人類學與民族學學會碩... <span>【學會公告】</span></a></li>
+                            </ul>
+                            <BR><a href="#" class="theme-btn btn-style-one" id="news_btn">more</a>
+                        </div>
+               	</div>
+                
+               <!--Content Side-->
+                <div class="content-side col-lg-4 col-md-4 col-sm-12 col-xs-12">
+					<div class="content">
+                    	<!--Sec Title-->
+                    	<div class="sec-title">
+                        	<h2>年會活動</h2>
+                        </div>
+
+                        <!--News Block Seven-->
+                        <div class="news-block-seven1">
+                            <div class="inner-box">
+                                <div class="image">
+                                    <a href="blog-single.html"><img src="images/resource/news-29.jpg" alt="" /></a>
+                                </div>
+                                <div class="lower-box">
+                                    <div class="text">臺灣人類學與民族學學會2017年會</div>
+                                    <a href="#" class="theme-btn btn-style-one">more</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+<!--Content Side-->
+                <div class="content-side col-lg-4 col-md-4 col-sm-12 col-xs-12">
+					<div class="content">
+                    	<!--Sec Title-->
+                    	<div class="sec-title">
+                        	<h2>研究出版</h2>
+                        </div>
+
+                        <!--News Block Seven-->
+                        <div class="news-block-seven2">
+                            <div class="inner-box">
+                                <div class="image">
+                                    <a href="blog-single.html"><img src="images/resource/news-28.jpg" alt="" /></a>
+                                </div>
+                                <div class="lower-box">
+                                    <div class="text">人類學視界第十八期 2015.09</div>
+                                    <a href="#" class="theme-btn btn-style-one">more</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <!--End Sidebar Page Container-->
+    
+    
+    <!--Main Footer-->
+    <footer class="main-footer">
+
+        <!--Footer Bottom-->
+        <div class="footer-bottom">
+             <div class="copyright-section">
+                <div class="auto-container">
+                    <div class="row clearfix">
+                        <div class="col-md-12">
+                            <div >
+                              <div align="center" class="style1">國立交通大學人文社會學系 轉 臺灣人類學與民族學學會 ｜ 通訊會址：30272 新竹縣竹北市六家五路一段一號HK110<br>
+                            中央研究院民族學研究所2606室 ｜ 永久會址：11529 臺北市南港區研究院路二段128號<br>
+                            Copyright © 2018 Taiwan Society for Anthropology and Ethnology</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--End Main Footer-->
+    
+</div>
+<!--End pagewrapper-->
+
+<!--Scroll to top-->
+<div class="scroll-to-top scroll-to-target" data-target="html"><span class="icon fa fa-angle-double-up"></span></div>
+
+<!--Scroll to top-->
+
+<script src="js/jquery.js"></script> 
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.fancybox.pack.js"></script>
+<script src="js/jquery.fancybox-media.js"></script>
+<script src="js/owl.js"></script>
+<script src="js/appear.js"></script>
+<script src="js/wow.js"></script>
+<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="js/script.js"></script>
+<script src="js/color-settings.js"></script>
+
+</body>
+</html>

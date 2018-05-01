@@ -1,0 +1,87 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+    xmlns:tal="http://xml.zope.org/namespaces/tal"
+    xmlns:metal="http://xml.zope.org/namespaces/metal"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    lang="en"
+    metal:use-macro="context/main_template/macros/master"
+    i18n:domain="taiwananthro.content">
+<body>
+
+
+<metal:content-core fill-slot="content-core">
+<metal:content-core define-macro="content-core"
+                    tal:define="toc context/table_of_contents|nothing;">
+<!-- banner -->
+<div class="single-item-carousel owl-carousel owl-theme banner">
+<tal:img repeat="item view/img_brain">
+    <div class="news-block-six">
+        <div class="inner-box">
+            <div class="image-box">
+                <div class="image">
+                    <img src="${item/getURL}/@@images/image/large" />
+                    <div class="overlay-box" style='display:none'>
+                        <div class="overlay-inner">
+                            <div class="content">
+                                <h2><a href="#">黃曉明 攝影</a></h2>
+                                <div class="post-date">2018-03-30</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</tal:img>
+</div>
+
+<!-- 新聞 -->
+<ul class="cat-list">
+<tal:news repeat="item view/news_brain">
+    <li class="clearfix">
+        <a href="${item/getURL}">${python:'%s...' %item.Title[:60] if len(item.Title)>60 else item.Title}</a>
+    </li>
+</tal:news>
+</ul>
+<a href="${portal_url}/news" class="theme-btn btn-style-one" id="news_btn">more</a>
+<!-- 新聞輪播 -->
+<div class="single-item-carousel owl-carousel owl-theme news_banner">
+<tal:news repeat="item view/news_brain">
+    <div class="slide">
+        <div class="text">${python:'%s...' %item.Title[:60] if len(item.Title)>60 else item.Title}</div>
+    </div>
+</tal:news>
+</div>
+<!-- 年會活動 -->
+<div class="news-block-seven1">
+    <div class="inner-box">
+        <div class="image">
+            <a href="${view/annual_meeting_brain/getURL}">
+            <img src="${view/annual_meeting_brain/getURL}/@@images/cover_image/preview" alt="" /></a>
+        </div>
+        <div class="lower-box">
+            <div class="text">${view/annual_meeting_brain/Title}</div>
+            <a href="${portal_url}/annual_meeting" class="theme-btn btn-style-one">more</a>
+        </div>
+    </div>
+</div>
+
+<!-- 研究出版 -->
+<div class="news-block-seven2">
+    <div class="inner-box">
+        <div class="image">
+            <a href="${view/research_publish_brain/getURL}">
+            <img src="${view/research_publish_brain/getURL}/@@images/cover_image/preview" alt=""/></a>
+        </div>
+        <div class="lower-box">
+            <div class="text">${view/research_publish_brain/Title}</div>
+            <a href="${portal_url}/research_publish/anthropology_publish" class="theme-btn btn-style-one">more</a>
+        </div>
+    </div>
+</div>
+
+
+</metal:content-core>
+</metal:content-core>
+
+</body>
+</html>

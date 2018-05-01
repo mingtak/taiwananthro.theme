@@ -1,0 +1,109 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+    xmlns:tal="http://xml.zope.org/namespaces/tal"
+    xmlns:metal="http://xml.zope.org/namespaces/metal"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    lang="en"
+    metal:use-macro="context/main_template/macros/master"
+    i18n:domain="taiwananthro.content">
+<body>
+
+
+<metal:content-core fill-slot="content-core">
+<metal:content-core define-macro="content-core"
+                    tal:define="toc context/table_of_contents|nothing;">
+<style>
+th{
+    width: 210px;
+    padding: 10px 10px;
+    text-align: center;
+    font-size: 19px;
+}
+input{
+    width: 100%;
+    font-size: 17px;
+    padding: 10px 10px;
+    border-bottom: 1px solid grey;
+
+}
+td{
+    width: 350px;
+    padding: 10px 10px;
+    font-size: 17px;
+}
+</style>
+<?python
+ from plone import api
+ abs_url = api.portal.get().absolute_url()
+?>
+
+<form action="${abs_url}/update_user_profile" method="POST" >
+    <table>
+        <tr>
+            <th>姓名</th>
+            <td>${view/fullname}</td>
+        </tr>
+        <tr>
+            <th>E-mail</th>
+            <td>${view/email}</td>
+        </tr>
+        <tr>
+            <th>生日</th>
+            <td>
+                <input type="text" value="${view/birthday}" 
+                    name='birthday' placeholder="注意格式：西元年-月-日"/>
+            </td>
+        </tr>
+        <tr>
+            <th>性別</th>
+            <td>
+                <input type="text" value="${view/gender}" name='gender'/>
+            </td>
+        </tr>
+        <tr>
+            <th>學經歷</th>
+            <td>        
+                <input type="text" value="${view/education}" name='education'/>
+            </td>
+        </tr>
+        <tr>
+            <th>現職</th>
+            <td>
+                <input type="text" value="${view/job}" name='job'/>
+            </td>
+        </tr>
+        <tr>
+            <th>戶籍地</th>
+            <td>
+                <input type="text" value="${view/registered_residence}" name='registered_residence'/>
+            </td>
+        </tr>
+        <tr>
+            <th>通訊地址</th>
+            <td>
+                <input type="text" value="${view/address}" name='address'/>
+            </td>
+        </tr>
+        <tr>
+            <th>聯絡電話</th>
+            <td>
+                <input type="text" value="${view/cellphone}" name='cellphone'/>
+            </td>
+        </tr>
+        <tr>
+            <th>會員繳費狀況</th>
+            <td>${view/is_paid}</td>
+
+        </tr>
+        <tr>
+            <th>是否為活動會員</th>
+            <td>${view/is_event_member}</td>
+        </tr>          
+    </table>
+    <input type="submit" value="更新" 
+        style="margin-top:20px;width:35%;background:green;color:white;font-size:22px;padding:20px 10px" />
+</form>
+</metal:content-core>
+</metal:content-core>
+
+</body>
+</html>

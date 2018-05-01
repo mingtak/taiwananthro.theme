@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rules xmlns="http://namespaces.plone.org/diazo"
+       xmlns:css="http://namespaces.plone.org/diazo/css"
+       xmlns:xhtml="http://www.w3.org/1999/xhtml"
+       xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+       xmlns:xi="http://www.w3.org/2001/XInclude">
+ <!-- Include the backend theme -->
+  <xi:include href="++theme++barceloneta/backend.xml" />
+  <!-- <theme href="index.html" /> -->
+  <notheme css:if-not-content="#visual-portal-wrapper" />
+
+  <rules css:if-content="#portal-top">
+    <!-- Attributes -->
+    <copy attributes="*" css:theme="html" css:content="html" />
+    <!-- Base tag -->
+    <before css:theme="title" css:content="base" />
+    <!-- Title -->
+    <replace css:theme="title" css:content="title" />
+    <!-- Pull in Plone Meta -->
+    <after css:theme-children="head" css:content="head meta" />
+    <!-- Don't use Plone icons, use the theme's -->
+    <drop css:content="head link[rel='apple-touch-icon']" />
+    <drop css:content="head link[rel='shortcut icon']" />
+    <!-- drop the theme stylesheets -->
+    <drop theme="/html/head/link[rel='stylesheet']" />
+    <!-- CSS -->
+<!--    <after css:theme-children="head" css:content="head link" /> -->
+    <!-- Script -->
+<!--    <after css:theme-children="head" css:content="head script" /> -->
+  </rules>
+
+  <!-- Copy over the id/class attributes on the body tag. This is important for per-section styling -->
+  <copy attributes="*" css:content="body" css:theme="body" />
+  <!-- search bar -->
+  <drop css:theme='.search-box-outer' />
+  <!-- logo -->
+  <replace css:content='#portal-logo' css:theme-children='.logo.pull-left' />
+  <replace css:content='#portal-logo' css:theme-children='.pull-left.logo-outer .logo' />
+  <drop css:content='#portal-logo img' />
+
+  <!-- move global nav -->
+  <replace css:theme-children="#mainnavigation" css:content-children="#portal-mainnavigation" method="column" />
+
+  <!-- full-width breadcrumb -->
+  <replace css:content="#viewlet-above-content" css:theme="#above-content" />
+  <!-- nav bar -->
+  <replace css:content='#portal-globalnav' css:theme-children='#bs-example-navbar-collapse-1' />
+  <replace css:content='#portal-globalnav' css:theme='.right-col.pull-right ul.navigation.clearfix' />
+  <replace css:content-children='.navTree.navTreeLevel0' css:theme-children='.cat-list' />
+  
+  <!-- 登入 -->
+  <replace css:content='#personaltools-login' css:theme='.top-nav' />
+
+  <!-- 首頁 -->
+  <rules css:if-content='.template-cover'>
+    <theme href="index.html" />
+    <replace css:content='#news_btn' css:theme='#news_btn' />
+    <replace css:content='ul.cat-list' css:theme='ul.cat-list' />
+    <replace css:content='div.news-block-seven1' css:theme='div.news-block-seven1' />
+    <replace css:content='div.news-block-seven2' css:theme='div.news-block-seven2' />
+    <replace css:content='.single-item-carousel.owl-carousel.owl-theme.banner' 
+             css:theme='.single-item-carousel.owl-carousel.owl-theme.banner' />
+    <replace css:content='.single-item-carousel.owl-carousel.owl-theme.news_banner' 
+             css:theme='.single-item-carousel.owl-carousel.owl-theme.news_banner' />
+  </rules>
+  <!-- Folder View -->
+  <rules css:if-content='.portaltype-folder'>
+    <theme href='list.html' />
+    <drop css:theme='.preloader' />
+    <replace css:content='.entries' css:theme-children='.content-blocks' />
+    <replace css:content-children='.pagination ul' css:theme-children='.styled-pagination ul.clearfix' />
+    <replace css:content-children='.documentFirstHeading' css:theme-children='.pull-left h2' />
+  </rules>
+  <!-- 新聞內容 -->
+  <rules css:if-content='.portaltype-news.section-news'>
+    <theme href="about.html" />
+    <drop css:theme='.preloader' />
+    <replace css:content='.documentFirstHeading' css:theme-children='.upper-box h2' />
+    <replace css:content='#content-core .creation_date' css:theme-children='.post-meta .creation_date' />
+    <replace css:content='#content-core .richtext' css:theme-children='.inner-box .text' />
+    <replace css:content-children='.container ol' css:theme-children='.breadcrumb-bar' />
+    <after css:content='.selected-option' css:theme-children='.post-meta' />
+    <drop css:theme='.new-article.clearfix' />
+    <drop css:theme='.author' />
+    <drop css:theme='.social-icon-one.alternate' />
+    <drop css:theme='.pull-left h2' />
+  </rules>
+
+  <!-- 年會封面,會員資料-->
+  <rules css:if-content='.portaltype-document.section-annual_meeting,.template-user_profile'>
+    <theme href='contact.html' />
+    <drop css:theme='.preloader' />
+    <replace css:content='#content-core' css:theme-children='.contact-section .auto-container' />
+    <replace css:content-children='#viewlet-above-content #portal-breadcrumbs ol' 
+             css:theme-children='.page-title-breadcrumb' />\
+    <drop css:theme='.page-title .pull-left' />
+    <replace css:content='#global_statusmessage' css:theme-children='#error_msg' />
+  </rules>
+  <!-- 聯絡我們 -->
+  <rules css:if-content='.section-contact_us'>
+    <theme href='contact.html' />
+    <drop css:theme='.preloader' />
+  </rules>
+  <!-- Document view -->
+  <rules css:if-content='.portaltype-disseration,.template-document_view,.portaltype-relatedwebsite'>
+    <theme href='about.html' />
+    <drop css:theme='.preloader' />
+    <replace css:content='.documentFirstHeading' css:theme-children='.upper-box h2' />
+    <replace css:content-children='.container ol' css:theme-children='.breadcrumb-bar' />
+    <replace css:content='#content-core' css:theme-children='.inner-box .text' />
+    <drop css:theme='.new-article.clearfix' />
+    <drop css:theme='.post-meta' />
+    <drop css:theme='.social-icon-one.alternate' />
+    <drop css:theme='.pull-left h2' />
+  </rules>
+  <!-- 人類學視界 -->
+  <rules css:if-content='.portaltype-anthroreport'>
+    <theme href='contact.html' />
+    <drop css:theme='.preloader' />
+    <replace css:content-children='#viewlet-above-content #portal-breadcrumbs ol' 
+             css:theme-children='.page-title-breadcrumb' />
+    <replace css:content='iframe' css:theme-children='.contact-section .auto-container' />
+    <drop css:theme='.page-title .pull-left' />
+  </rules>
+  
+  <rules css:if-content='.template-logged_out,.template-login_form'>
+    <theme href='contact.html' />
+    <drop css:theme='.preloader' />
+    <replace css:content='#content-core' css:theme-children='.contact-section .auto-container' />
+  </rules>
+
+  <!-- Edit bar, frontend -->
+  <drop css:content="#edit-zone" css:if-content="body.frontend"/>
+
+
+</rules>
