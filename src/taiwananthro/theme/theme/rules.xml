@@ -132,5 +132,6 @@
   <!-- Edit bar, frontend -->
   <drop css:content="#edit-zone" css:if-content="body.frontend"/>
 
-
+  <!-- drop -->
+  <drop css:theme="div.preloader" css:if-not-content="body.template-cover"/>
 </rules>
