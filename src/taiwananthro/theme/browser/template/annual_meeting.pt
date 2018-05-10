@@ -36,7 +36,7 @@
                 <div class="news-block-four">
                     <div class="inner-box">
                         <div class="row clearfix">
-                            <div class="image-column col-md-6 col-sm-6 col-xs-12">
+                            <div class="image-column col-md-3 col-sm-6 col-xs-12">
                                 <div class="image">
                                     <a tal:attributes="href item_link">
                                     <img    class="image-tile wow fadeIn animated"
@@ -45,7 +45,7 @@
                                     </a>
                                 </div>
                             </div>
-                            <div class="content-box col-md-6 col-sm-6 col-xs-12">
+                            <div class="content-box col-md-9 col-sm-6 col-xs-12">
                                 <div class="content-inner">
                                     <h3><a tal:attributes="href item_link;
                                                         class string:$item_type_class $item_wf_state_class url;
@@ -55,6 +55,7 @@
                                     <ul class="post-meta">
                                         <li><span class="icon fa fa-clock-o"></span>${python:view.toLocalizedTime(item.CreationDate())}</li>
                                     </ul>
+                                    <p tal:content="structure python:obj.description.replace('\n', '<br>')"></p>
                                 </div>
                             </div>
                         </div>

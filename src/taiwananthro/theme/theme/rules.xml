@@ -119,7 +119,7 @@
     <drop css:theme='.preloader' />
     <replace css:content-children='#viewlet-above-content #portal-breadcrumbs ol' 
              css:theme-children='.page-title-breadcrumb' />
-    <replace css:content='iframe' css:theme-children='.contact-section .auto-container' />
+    <replace css:content-children='#core-block' css:theme-children='.contact-section .auto-container' />
     <drop css:theme='.page-title .pull-left' />
   </rules>
   
