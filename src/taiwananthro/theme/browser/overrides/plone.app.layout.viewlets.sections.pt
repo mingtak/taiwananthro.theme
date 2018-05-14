@@ -25,7 +25,6 @@ portal = api.portal.get()
                     tal:attributes="target tab/link_target|nothing;">
                 </a>
 
-                <tal:cond condition="repeat/tab/index">
                   <ul tal:define="sec_level python:portal[tab['id']].listFolderContents()">
                     <tal:li repeat="sec sec_level">
                       <li tal:condition="not:sec/exclude_from_nav">
@@ -33,7 +32,6 @@ portal = api.portal.get()
                       </li>
                     </tal:li>
                   </ul>
-                </tal:cond>
 
             </li>
           </tal:tabs>
@@ -53,12 +51,10 @@ portal = api.portal.get()
                 <!--navigation-->
                 <ul class="navigation clearfix" tal:define="selected_tab python:view.selected_portal_tab">
                     <tal:tabs tal:repeat="tab portal_tabs">
-                        <li class="${python:'dropdown' if repeat['tab'].index else ''}
-                                   ${python:selected_tab==tid and 'current' or nothing}" tal:define="tid tab/id">
+                        <li class="dropdown ${python:selected_tab==tid and 'current' or nothing}" tal:define="tid tab/id">
                             <a href="javascript:void(0)"
                                tal:content="tab/name"
                                tal:attributes="target tab/link_target|nothing;">關於本會</a>
-                            <tal:cond condition="repeat/tab/index">
                                 <ul tal:define="sec_level python:portal[tab['id']].listFolderContents()">
                                     <tal:li repeat="sec sec_level">
                                         <li tal:condition="not:sec/exclude_from_nav">
@@ -66,7 +62,6 @@ portal = api.portal.get()
                                         </li>
                                     </tal:li>
                                 </ul>
-                            </tal:cond>
                         </li>
                      </tal:tabs>
                  </ul>
