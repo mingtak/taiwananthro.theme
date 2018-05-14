@@ -1,0 +1,47 @@
+<tal:sections
+     xmlns:tal="http://xml.zope.org/namespaces/tal"
+     xmlns:metal="http://xml.zope.org/namespaces/metal"
+     xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+     tal:define="portal_tabs view/portal_tabs"
+     tal:condition="portal_tabs"
+     i18n:domain="plone">
+
+<?python
+from plone import api
+portal = api.portal.get()
+?>
+
+<nav class="plone-navbar" id="portal-globalnav-wrapper">
+  <div class="container">
+    <div class="plone-collapse plone-navbar-collapse" id="portal-globalnav-collapse">
+      <ul class="plone-nav plone-navbar-nav navigation clearfix"
+          id="portal-globalnav"
+          tal:define="selected_tab python:view.selected_portal_tab">
+          <tal:tabs tal:repeat="tab portal_tabs">
+            <li tal:define="tid tab/id"
+                class="dropdown">
+                <a href=""
+                    tal:content="tab/name"
+                    tal:attributes="href tab/url;
+                                    target tab/link_target|nothing;">
+                </a>
+
+                <tal:cond condition="repeat/tab/index">
+                  <ul tal:define="sec_level python:portal[tab['id']].listFolderContents()">
+                    <tal:li repeat="sec sec_level">
+                      <li tal:condition="not:sec/exclude_from_nav">
+                        <a href="${sec/absolute_url}">${sec/title}</a>
+                      </li>
+                    </tal:li>
+                  </ul>
+                </tal:cond>
+
+            </li>
+          </tal:tabs>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+</tal:sections>
+
