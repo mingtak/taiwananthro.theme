@@ -19,7 +19,7 @@ portal = api.portal.get()
           tal:define="selected_tab python:view.selected_portal_tab">
           <tal:tabs tal:repeat="tab portal_tabs">
             <li tal:define="tid tab/id"
-                class="dropdown">
+                class="dropdown ${python:selected_tab==tid and 'current' or nothing}">
                 <a href="javascript:void(0)"
                     tal:content="tab/name"
                     tal:attributes="target tab/link_target|nothing;">
@@ -41,6 +41,39 @@ portal = api.portal.get()
     </div>
   </div>
 </nav>
+
+
+        <!-- Hidden Bar Wrapper -->
+        <div class="hidden-bar-wrapper" id="rwd-menu">
+            <div class="logo">
+                <a href="${portal/absolute_url}"></a>
+            </div>
+            <!-- .Side-menu -->
+            <div class="side-menu">
+                <!--navigation-->
+                <ul class="navigation clearfix" tal:define="selected_tab python:view.selected_portal_tab">
+                    <tal:tabs tal:repeat="tab portal_tabs">
+                        <li class="${python:'dropdown' if repeat['tab'].index else ''}
+                                   ${python:selected_tab==tid and 'current' or nothing}" tal:define="tid tab/id">
+                            <a href="javascript:void(0)"
+                               tal:content="tab/name"
+                               tal:attributes="target tab/link_target|nothing;">關於本會</a>
+                            <tal:cond condition="repeat/tab/index">
+                                <ul tal:define="sec_level python:portal[tab['id']].listFolderContents()">
+                                    <tal:li repeat="sec sec_level">
+                                        <li tal:condition="not:sec/exclude_from_nav">
+                                            <a href="${sec/absolute_url}">${sec/title}</a>
+                                        </li>
+                                    </tal:li>
+                                </ul>
+                            </tal:cond>
+                        </li>
+                     </tal:tabs>
+                 </ul>
+            </div>
+            <!-- /.Side-menu -->
+        </div><!-- / Hidden Bar Wrapper -->
+
 
 </tal:sections>
 
