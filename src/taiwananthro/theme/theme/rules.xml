@@ -48,8 +48,9 @@
   <replace css:content='#portal-globalnav' css:theme='.right-col.pull-right ul.navigation.clearfix' />
   <replace css:content-children='.navTree.navTreeLevel0' css:theme-children='.cat-list' />
   
-  <!-- 登入 -->
-  <replace css:content='#personaltools-login' css:theme='.top-nav' />
+  <!-- 登入 / 登出-->
+  <replace css:content='#personaltools-login' css:theme='.top-nav' css:if-content="body.userrole-anonymous"/>
+  <replace css:content='#personaltools-logout' css:theme='.top-nav' css:if-not-content="body.userrole-anonymous" />
 
   <!-- 首頁 -->
   <rules css:if-content='.template-cover'>

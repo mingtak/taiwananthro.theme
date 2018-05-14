@@ -20,10 +20,9 @@ portal = api.portal.get()
           <tal:tabs tal:repeat="tab portal_tabs">
             <li tal:define="tid tab/id"
                 class="dropdown">
-                <a href=""
+                <a href="javascript:void(0)"
                     tal:content="tab/name"
-                    tal:attributes="href tab/url;
-                                    target tab/link_target|nothing;">
+                    tal:attributes="target tab/link_target|nothing;">
                 </a>
 
                 <tal:cond condition="repeat/tab/index">

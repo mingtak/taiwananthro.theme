@@ -13,17 +13,17 @@
                     tal:define="toc context/table_of_contents|nothing;">
 <!-- banner -->
 <div class="single-item-carousel owl-carousel owl-theme banner">
-<tal:img repeat="item view/img_brain">
+<tal:img repeat="item view/slider">
     <div class="news-block-six">
         <div class="inner-box">
             <div class="image-box">
                 <div class="image">
-                    <img src="${item/getURL}/@@images/image/large" />
-                    <div class="overlay-box" style='display:none'>
+                    <img src="${item/absolute_url}/@@images/image" />
+                    <div class="overlay-box">
                         <div class="overlay-inner">
                             <div class="content">
-                                <h2><a href="#">黃曉明 攝影</a></h2>
-                                <div class="post-date">2018-03-30</div>
+                                <h2><a href="#">${python:item.description.split('\n')[0]}</a></h2>
+                                <div class="post-date">${python:item.description.split('\n')[-1]}</div>
                             </div>
                         </div>
                     </div>
