@@ -118,13 +118,18 @@
     <drop css:theme='.pull-left h2' />
   </rules>
   <!-- 人類學視界 -->
-  <rules css:if-content='.portaltype-anthroreport'>
+  <rules css:if-content='.portaltype-anthroreport, .portaltype-anthroarticle'>
     <theme href='contact.html' />
     <drop css:theme='.preloader' />
     <replace css:content-children='#viewlet-above-content #portal-breadcrumbs ol' 
              css:theme-children='.page-title-breadcrumb' />
-    <replace css:content-children='#core-block' css:theme-children='.contact-section .auto-container' />
+    <replace css:content-children='#core-block'
+             css:theme-children='.contact-section .auto-container'
+             css:if-content=".portaltype-anthroreport" />
     <drop css:theme='.page-title .pull-left' />
+    <replace css:content-children="#content"
+             css:theme-children=".contact-section .auto-container"
+             css:if-not-content=".portaltype-anthroreport"/>
   </rules>
   
   <rules css:if-content='.template-logged_out,.template-login_form'>
