@@ -7,7 +7,6 @@
 
 <xi:include href="backend.xml" />
 
-
 <!-- Only theme front end pages -->
 <rules css:if-content="body.frontend#visual-portal-wrapper">
 
@@ -39,10 +38,8 @@
   <replace css:theme-children="#rolling-menu" css:content-children="#portal-globalnav" />
   <replace css:theme="#rwd-menu" css:content="#rwd-menu" />
 
-
   <!-- Central column -->
   <replace css:theme="#content-container" method="raw">
-
     <xsl:variable name="central">
       <xsl:if test="//aside[@id='portal-column-one'] and //aside[@id='portal-column-two']">content-side col-lg-6 col-md-6 col-sm-12 col-xs-12</xsl:if>
       <xsl:if test="//aside[@id='portal-column-two'] and not(//aside[@id='portal-column-one'])">content-side col-lg-9 col-md-8 col-sm-12 col-xs-12</xsl:if>
@@ -51,16 +48,13 @@
     </xsl:variable>
 
     <div class="{$central}">
-
       <div class="row">
         <div class="col-xs-12 col-sm-12">
           <xsl:apply-templates css:select="#content" />
         </div>
       </div>
-
     </div>
   </replace>
-
 
   <!-- Left column -->
   <rules css:if-content="#portal-column-one">
@@ -86,10 +80,14 @@
   </rules>
   <drop css:theme="#column2-container" css:if-not-content="#portal-column-two" />
 
+  <!-- cover slider -->
+  <replace css:content="section#cover-slider-viewlet" css:theme="section.main-slider-three" />
+
   <!-- drop -->
   <drop css:content="#edit-zone" />
   <drop css:theme-children=".top-left.col-md-4.col-sm-12.col-xs-12" />
   <drop css:theme=".preloader" />
-</rules>
-</rules>
+  <drop css:content="#cover-slider-viewlet" css:if-not-content=".template-cover" />
 
+</rules>
+</rules>
