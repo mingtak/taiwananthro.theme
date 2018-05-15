@@ -10,7 +10,6 @@
 
 <!--Color Themes-->
 <link id="theme-color-file" href="css/color-themes/default-theme.css" rel="stylesheet">
-<link href="css/custom.css" rel="stylesheet">
 
 <!--Favicon-->
 <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
@@ -20,14 +19,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
 <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+
 <style type="text/css">
 <!--
+
 .style1 {color: #FFFFFF}
 -->
-table,td{
-    border: 1px solid gray
-}
 </style>
+
 </head>
 
 <body>
@@ -44,6 +43,18 @@ table,td{
                 <div class="clearfix">
                     <!--Top Left-->
                     <div class="top-left col-md-4 col-sm-12 col-xs-12">
+                    	<div class="trend">．最新消息: </div>
+                        <div class="single-item-carousel owl-carousel owl-theme">
+                        	<div class="slide">
+                            	<div class="text">【學會公告】2018年「臺灣人類學與民族學...</div>
+                            </div>
+                            <div class="slide">
+                            	<div class="text">【學會公告】本會理事長暨秘書處完成交接</div>
+                            </div>
+                            <div class="slide">
+                            	<div class="text">【學會公告】恭賀林文玲教授獲選為臺灣人類...</div>
+                            </div>
+                        </div>
                     </div>
                     <!--Top Right-->
                     <div class="top-right pull-right col-md-8 col-sm-12 col-xs-12">
@@ -52,13 +63,14 @@ table,td{
                             <li><a href="#">訂閱電子報</a></li>
                         </ul>
                         <ul class="english-nav">
-                        	<li class="active tc_li" ><a class="tc" href='javascript:(function(){var s=document.getElementById("tongwenlet_tw");if(s!=null){document.body.removeChild(s);}var s=document.createElement("script");s.language="javascript";s.type="text/javascript";s.src="https://rawgit.com/skofkyo/userChromeJS/master/UserScriptLoader/bookmarklet_tw.js";s.id="tongwenlet_tw";document.body.appendChild(s);})();'>繁體</a></li>
-                            <li class="sc_li"><a class="sc" href='javascript:(function(){var s=document.getElementById("tongwenlet_cn");if(s!=null){document.body.removeChild(s);}var s=document.createElement("script");s.language="javascript";s.type="text/javascript";s.src="https://rawgit.com/skofkyo/userChromeJS/master/UserScriptLoader/bookmarklet_cn.js";s.id="tongwenlet_cn";document.body.appendChild(s);})();'>簡體</a></li>
+                        	<li class="active"><a href="#">繁體</a></li>
+                            <li><a href="#">簡體</a></li>
+                            <li><a href="#">English</a></li>
                         </ul>
-                        <!-- <ul class="social-nav">
+                        <ul class="social-nav">
                         	<li><a href="#"><span class="fa fa-facebook-square"></span></a></li>
                             <li><a href="#"><span class="fa fa-google-plus"></span></a></li>
-                        </ul> -->
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -137,8 +149,7 @@ table,td{
                                                     </div>
                                                     <div class="lower-box">
                                                         <h3><a href="#">臺灣人類學與民族學學會2017年會</a></h3>
-                                                        <div class="post-date">
-                                                            <span>2018-03-30<span></div>
+                                                        <div class="post-date">2018-03-30</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -485,8 +496,8 @@ table,td{
                                     </ul>
                                     <h2>學會簡介</h2>
                                     <ul class="post-meta">
-                                        <li><span class="icon qb-clock"></span><span class="creation_date"> 2018-03-30</span></li>
-                                        <li class="author"><span class="icon qb-user2"></span>作者：黃曉明</li>
+                                        <li><span class="icon qb-clock"></span>2018-03-30</li>
+                                        <li><span class="icon qb-user2"></span>作者：黃曉明</li>
                                     </ul>
                                     <ul class="social-icon-one alternate">
                                         <li class="share">Share:</li>
@@ -522,7 +533,7 @@ table,td{
                         <!--Category Widget-->
                         <div class="sidebar-widget categories-widget">
                             <div class="sidebar-title">
-                                <h2>內容導覽</h2>
+                                <h2>關於本會</h2>
                             </div>
                             <ul class="cat-list">
                             	<li class="clearfix"><a href="#">學會簡介</a></li>
@@ -537,13 +548,12 @@ table,td{
                         <!--Recent News Widget-->
                         <div class="sidebar-widget recent-news-widget">
                         	<div class="sec-title">
-<!--                            	<h2>FB粉絲團</h2> -->
+                            	<h2>FB粉絲團</h2>
                             </div>
                         	<!--News Block Five-->
                             <div class="news-block-five">
                               <div class="fb-page" data-href="https://zh-tw.facebook.com/%E8%87%BA%E7%81%A3%E4%BA%BA%E9%A1%9E%E5%AD%B8%E8%88%87%E6%B0%91%E6%97%8F%E5%AD%B8%E5%AD%B8%E6%9C%83-547228922013296/" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"></div>
                             </div>
-
                         
                     </aside>
                	</div>
@@ -602,17 +612,5 @@ table,td{
   js.src = 'https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v2.12';
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
-<script>
-    $(function () {
-        $('.tc').click(function(){
-            $('.tc_li').addClass('active')
-            $('.sc_li').removeClass('active')
-        })
-        $('.sc').click(function(){
-            $('.sc_li').addClass('active')
-            $('.tc_li').removeClass('active')
-        })
-    });
-    </script>
 </body>
 </html>
