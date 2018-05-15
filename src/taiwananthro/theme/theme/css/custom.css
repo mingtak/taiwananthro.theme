@@ -1,4 +1,12 @@
+body .search-box-outer {
+    display:none !important;
+}
+
 #login-form input {
     background-color: #ccc;
     margin:10px;
+}
+
+.add-image {
+    display:none
 }
