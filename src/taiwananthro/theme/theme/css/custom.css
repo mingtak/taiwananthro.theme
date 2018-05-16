@@ -1,3 +1,43 @@
+.styled-pagination::before {
+    display:none;
+}
+
+div.styled-pagination ul.clearfix li.active span {
+    border-color: #e73f43;
+    background-color:#e73f43;
+    color:#fff;
+}
+
+.styled-pagination li.next a, .styled-pagination li.previous a{
+    padding: 0 8px;
+}
+
+.styled-pagination li span {
+    position: relative;
+    display: inline-block;
+    line-height: 26px;
+    height: 30px;
+    font-size: 13px;
+    text-transform: capitalize;
+    min-width: 30px;
+    background: none;
+        background-color: rgba(0, 0, 0, 0);
+    color: #999999;
+    font-weight: 400;
+    text-align: center;
+    border: 2px solid #f3f3f3;
+        border-top-color: rgb(243, 243, 243);
+        border-right-color: rgb(243, 243, 243);
+        border-bottom-color: rgb(243, 243, 243);
+        border-left-color: rgb(243, 243, 243);
+    transition: all 500ms ease;
+    -webkit-transition: all 500ms ease;
+    -ms-transition: all 500ms ease;
+    -o-transition: all 500ms ease;
+    -moz-transition: all 500ms ease;
+    font-family: 微軟正黑體, 'Montserrat', sans-serif;
+}
+
 body .search-box-outer {
     display:none !important;
 }

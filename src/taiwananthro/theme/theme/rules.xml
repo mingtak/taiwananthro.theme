@@ -83,6 +83,16 @@
   <!-- cover slider -->
   <replace css:content="section#cover-slider-viewlet" css:theme="section.main-slider-three" />
 
+  <!-- batch -->
+  <replace css:content="nav.pagination">
+      <div class="styled-pagination">
+          <ul class="clearfix">
+              <xsl:copy-of css:select="nav.pagination ul > *" />
+<!--              <li><a class="next" href="#"><span class="fa fa-angle-right"></span></a></li> -->
+          </ul>
+      </div>
+  </replace>
+
   <!-- drop -->
   <drop css:content="#edit-zone" />
   <drop css:theme-children=".top-left.col-md-4.col-sm-12.col-xs-12" />
