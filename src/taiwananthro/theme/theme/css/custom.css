@@ -1,3 +1,7 @@
+.tab-h3 {
+    margin: 20px 0;
+}
+
 .styled-pagination::before {
     display:none;
 }
@@ -49,4 +53,8 @@ body .search-box-outer {
 
 .add-image {
     display:none
+}
+
+body {
+    font-size: 16px;
 }

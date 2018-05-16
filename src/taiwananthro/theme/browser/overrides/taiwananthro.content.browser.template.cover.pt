@@ -11,73 +11,77 @@
 <metal:content-core fill-slot="content-core">
 <metal:content-core define-macro="content-core"
                     tal:define="toc context/table_of_contents|nothing;">
-<!-- banner -->
-<div class="single-item-carousel owl-carousel owl-theme banner">
-<tal:img repeat="item view/slider">
-    <div class="news-block-six">
-        <div class="inner-box">
-            <div class="image-box">
-                <div class="image">
-                    <img src="${item/absolute_url}/@@images/image" />
-                    <div class="overlay-box">
-                        <div class="overlay-inner">
-                            <div class="content">
-                                <h2><a href="#">${python:item.description.split('\n')[0]}</a></h2>
-                                <div class="post-date">${python:item.description.split('\n')[-1]}</div>
+<?python
+from plone import api
+news = api.content.find(Type='News', sort_on='created', sort_order='reverse', sort_limit=5)[0:5]
+?>
+
+                <div class="sidebar-side col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <div class="sidebar-widget categories-widget">
+                            <div class="sidebar-title">
+                                <h2>最新消息</h2>
+                            </div>
+                            <ul class="cat-list">
+                            	<li class="clearfix" tal:repeat="item view/news_brain">
+                                    <a href="${item/getURL}">${python:item.Title[0:45]}
+                                    <span>【<span tal:replace="python:item.getObject().category" i18n:translate=""/>】</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <BR><a href="${portal_url}/news/institute_news" class="theme-btn btn-style-one">more</a>
+                        </div>
+               	</div>
+                
+               <!--Content Side-->
+                <div class="content-side col-lg-4 col-md-4 col-sm-12 col-xs-12">
+					<div class="content">
+                    	<!--Sec Title-->
+                    	<div class="sidebar-title">
+                        	<h2>年會活動</h2>
+                        </div>
+
+                        <!--News Block Seven-->
+                        <div class="news-block-seven1">
+                            <div class="inner-box">
+                                <div class="image">
+                                    <a href="${view/annual_meeting/absolute_url}">
+                                        <img src="${view/annual_meeting/absolute_url}/@@images/image/preview"
+                                             alt="${view/annual_meeting/title}" />
+                                    </a>
+                                </div>
+                                <div class="lower-box">
+                                    <div class="text">${view/annual_meeting/title}</div>
+                                    <a href="${view/annual_meeting/absolute_url}" class="theme-btn btn-style-one">more</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-</tal:img>
-</div>
+                
+<!--Content Side-->
+                <div class="content-side col-lg-4 col-md-4 col-sm-12 col-xs-12">
+					<div class="content">
+                    	<!--Sec Title-->
+                    	<div class="sidebar-title">
+                        	<h2>研究出版</h2>
+                        </div>
 
-<!-- 新聞 -->
-<ul class="cat-list">
-<tal:news repeat="item view/news_brain">
-    <li class="clearfix">
-        <a href="${item/getURL}">${python:'%s...' %item.Title[:60] if len(item.Title)>60 else item.Title}</a>
-    </li>
-</tal:news>
-</ul>
-<a href="${portal_url}/news" class="theme-btn btn-style-one" id="news_btn">more</a>
-<!-- 新聞輪播 -->
-<div class="single-item-carousel owl-carousel owl-theme news_banner">
-<tal:news repeat="item view/news_brain">
-    <div class="slide">
-        <div class="text">${python:'%s...' %item.Title[:60] if len(item.Title)>60 else item.Title}</div>
-    </div>
-</tal:news>
-</div>
-<!-- 年會活動 -->
-<div class="news-block-seven1">
-    <div class="inner-box">
-        <div class="image">
-            <a href="${view/annual_meeting_brain/getURL}">
-            <img src="${view/annual_meeting_brain/getURL}/@@images/cover_image/preview" alt="" /></a>
-        </div>
-        <div class="lower-box">
-            <div class="text">${view/annual_meeting_brain/Title}</div>
-            <a href="${portal_url}/annual_meeting" class="theme-btn btn-style-one">more</a>
-        </div>
-    </div>
-</div>
-
-<!-- 研究出版 -->
-<div class="news-block-seven2">
-    <div class="inner-box">
-        <div class="image">
-            <a href="${view/research_publish_brain/getURL}">
-            <img src="${view/research_publish_brain/getURL}/@@images/cover_image/preview" alt=""/></a>
-        </div>
-        <div class="lower-box">
-            <div class="text">${view/research_publish_brain/Title}</div>
-            <a href="${portal_url}/research_publish/anthropology_publish" class="theme-btn btn-style-one">more</a>
-        </div>
-    </div>
-</div>
+                        <!--News Block Seven-->
+                        <div class="news-block-seven2">
+                            <div class="inner-box">
+                                <div class="image">
+                                    <a href="${view/research_publish/absolute_url}">
+                                        <img src="${view/research_publish/absolute_url}/@@images/cover_image/preview" alt="${view/research_publish/title}" />
+                                    </a>
+                                </div>
+                                <div class="lower-box">
+                                    <div class="text">${view/research_publish/title}</div>
+                                    <a href="${view/research_publish/absolute_url}" class="theme-btn btn-style-one">more</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
 
 </metal:content-core>
