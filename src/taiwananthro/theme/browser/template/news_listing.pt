@@ -24,7 +24,9 @@
       <tal:listing condition="batch">
         <div class="entries" metal:define-slot="entries">
           <tal:repeat repeat="item batch" metal:define-macro="entries">
-            <tal:block tal:define="obj item/getObject;
+            <tal:block
+                tal:condition="python:item_type == 'News'"
+                tal:define="obj item/getObject;
                 item_url item/getURL;
                 item_id item/getId;
                 item_title item/Title;
@@ -43,7 +45,7 @@
                 <div class="news-block-four">
                     <div class="inner-box">
                         <div class="row clearfix">
-                            <div class="image-column col-md-6 col-sm-6 col-xs-12">
+                            <div class="image-column col-md-3 col-sm-3 col-xs-3">
                                 <div class="image">
                                     <a tal:attributes="href item_link">
                                     <img    class="image-tile wow fadeIn animated"
@@ -53,10 +55,10 @@
                                     </a>
                                 </div>
                             </div>
-                            <div class="content-box col-md-6 col-sm-6 col-xs-12" style="padding:0">
+                            <div class="content-box col-md-9 col-sm-9 col-xs-9" style="padding:0">
                                 <div class="content-inner">
                                     <div class="category" style="font-size:15px;padding:5px 10px">
-                                        <a>${python:view.format_category(item.getObject().category)}</a>
+                                        <span i18n:translate="" tal:content="obj/category|nothing"></span>
                                     </div>
                                     <h3><a tal:attributes="href item_link;
                                                         class string:$item_type_class $item_wf_state_class url;

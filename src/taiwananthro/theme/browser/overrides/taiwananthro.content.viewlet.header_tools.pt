@@ -1,0 +1,18 @@
+<!--Header Tools-->
+<div tal:condition="view/isFrontend" class="top-right pull-right col-md-8 col-sm-12 col-xs-12" id="header-tools">
+    <ul class="top-nav">
+        <li tal:switch="view/isAnon">
+            <a tal:case="True" href="${view/portal/absolute_url}/login">會員登入</a>
+            <tal:member tal:case="False">
+                <span style="color:#fff">Hi, ${view/current/id}
+                     (<a href="${view/portal/absolute_url}/logout">登出</a> <a tal:condition="view/isMana" href="${view/portal/absolute_url}/folder_contents"> / 進入後台</a>)
+                </span>
+            </tal:member>
+        </li>
+    </ul>
+    <ul class="english-nav">
+        <li class="active"><a href="javascript:void(0)">繁體</a></li>
+        <li><a href="javascript:void(0)">簡體</a></li>
+        <li><a href="javascript:void(0)">English</a></li>
+    </ul>
+</div>

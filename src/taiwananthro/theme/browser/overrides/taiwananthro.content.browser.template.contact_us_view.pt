@@ -29,7 +29,7 @@
             
             <div class="row clearfix">
             	<!--Form Column-->
-            	<div class="form-column col-md-8 col-sm-12 col-xs-12">
+            	<div class="form-column col-md-7 col-sm-12 col-xs-12">
                 	<div class="sec-title">
                     	<h2>聯絡我們</h2>
                     </div>
@@ -61,7 +61,7 @@
                     </div>
                 </div>
                 <!--Info Column-->
-                <div class="info-column col-md-4 col-sm-12 col-xs-12">
+                <div class="info-column col-md-5 col-sm-12 col-xs-12">
                 	<div class="inner-column">
                     	<div class="sec-title">
                         	<h2>學會資訊</h2>

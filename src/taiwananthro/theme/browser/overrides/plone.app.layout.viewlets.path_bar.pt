@@ -1,0 +1,61 @@
+<?python
+from plone import api
+from zope.component import queryUtility
+from plone.i18n.normalizer.interfaces import IIDNormalizer
+
+normalizer = queryUtility(IIDNormalizer)
+permissions = []
+for permission, roles in getattr(view.view, '__ac_permissions__', tuple()):
+    permissions.append(normalizer.normalize(permission))
+if 'none' in permissions or 'view' in permissions:
+    isFrontend = True
+else:
+    isFrontend = False
+?>
+
+
+<tal:pathbar switch="isFrontend">
+<section tal:case="True" id="portal-breadcrumbs" class="plone-breadcrumb page-title">
+    <div class="auto-container">
+        <div class="clearfix">
+            <div class="pull-left">
+                <h2>${context/title}</h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<nav tal:case="False" id="portal-breadcrumbs" class="plone-breadcrumb"
+         i18n:domain="plone"
+         tal:define="breadcrumbs view/breadcrumbs">
+  <div class="container">
+    <span id="breadcrumbs-you-are-here" class="hiddenStructure"
+            i18n:translate="you_are_here">You are here:</span>
+    <ol aria-labelledby="breadcrumbs-you-are-here">
+      <li id="breadcrumbs-home">
+        <a i18n:translate="tabs_home"
+            tal:attributes="href view/navigation_root_url">Home</a>
+      </li>
+      <li tal:repeat="crumb breadcrumbs"
+          tal:attributes="id string:breadcrumbs-${repeat/crumb/number};">
+        <tal:item tal:define="is_last repeat/crumb/end;
+                                url crumb/absolute_url;
+                                title crumb/Title">
+          <a href="#"
+              tal:omit-tag="not: url"
+              tal:condition="python:not is_last"
+              tal:attributes="href url"
+              tal:content="title">
+                  crumb
+          </a>
+          <span id="breadcrumbs-current"
+                tal:condition="is_last"
+                tal:content="title">crumb</span>
+        </tal:item>
+      </li>
+    </ol>
+  </div>
+</nav>
+
+</tal:pathbar>
