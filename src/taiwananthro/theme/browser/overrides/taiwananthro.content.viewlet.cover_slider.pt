@@ -1,5 +1,5 @@
     <!--Main Slider Three-->
-    <section class="main-slider-three" id="cover-slider-viewlet">
+    <section tal:condition="view/isFrontend" class="main-slider-three" id="cover-slider-viewlet">
         <div class="single-item-carousel owl-carousel owl-theme">
 
 <tal:img repeat="item view/slider">
