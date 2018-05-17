@@ -1,3 +1,7 @@
+p, .page-title h2, .main-menu .navigation > li > a, .cat-list li a {
+    color: #333;
+}
+
 .tab-h3 {
     margin: 20px 0;
 }

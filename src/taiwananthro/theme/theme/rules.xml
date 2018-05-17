@@ -60,9 +60,9 @@
   <rules css:if-content="#portal-column-one">
     <replace css:theme="#column1-container">
         <div id="sidebar-left" class="sidebar-side col-lg-3 col-md-3 col-sm-12 col-xs-12">
-            <div class="sidebar-widget categories-widget">
+            <aside class="sidebar default-sidebar left-sidebar">
                 <xsl:copy-of css:select="#portal-column-one > *" />
-            </div>
+            </aside>
         </div>
     </replace>
   </rules>
@@ -72,9 +72,9 @@
   <rules css:if-content="#portal-column-two">
     <replace css:theme="#column2-container">
         <div id="sidebar-right" class="sidebar-side col-lg-3 col-md-3 col-sm-12 col-xs-12">
-            <div class="sidebar-widget categories-widget">
+            <aside class="sidebar default-sidebar right-sidebar">
                 <xsl:copy-of css:select="#portal-column-two > *" />
-            </div>
+            </aside>
         </div>
     </replace>
   </rules>
