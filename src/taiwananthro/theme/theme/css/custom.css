@@ -1,3 +1,14 @@
+.news-block-six .inner-box .image-box .image .overlay-box .overlay-inner .content {
+    position: relative;
+    display: table-cell;
+    vertical-align: bottom;
+    text-align: left;
+}
+
+.news-block-six .inner-box .image-box .image .overlay-box .content h2::after {
+    display: none;
+}
+
 p, .page-title h2, .main-menu .navigation > li > a, .cat-list li a {
     color: #333;
 }

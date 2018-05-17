@@ -10,9 +10,7 @@
                     <img src="${item/absolute_url}/@@images/image" />
                     <div class="overlay-box">
                         <div class="overlay-inner">
-                            <div class="content">
-                                <h2><a href="#">${python:item.description.split('\n')[0]}</a></h2>
-                                <div class="post-date">${python:item.description.split('\n')[-1]}</div>
+                            <div class="content" tal:content="structure item/description">
                             </div>
                         </div>
                     </div>
