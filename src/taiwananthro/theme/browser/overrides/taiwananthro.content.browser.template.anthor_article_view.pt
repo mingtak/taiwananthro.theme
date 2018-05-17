@@ -15,7 +15,13 @@
 <div class="metadata" tal:content="structure context/metaData/raw"></div>
 <hr>
 
+<tal:paid switch="view/paid">
+  <tal:notPaid case="False">
+    <p>本文為付費文章</p>
+  </tal:notPaid>
 
+
+  <tal:paid case="True">
 <ul class="nav nav-tabs">
   <li class="active"><a data-toggle="tab" href="#abstract" i18n:translate="">Abstract</a></li>
   <li><a data-toggle="tab" href="#fulltext" i18n:translate="">Full Text</a></li>
@@ -33,15 +39,16 @@
   </div>
   <div id="pdf-tile" class="tab-pane fade">
     <h3 class="tab-h3" i18n:translate>PDF File</h3>
-<iframe src="${python:'%s/@@display-file/file/%s' %(view.context.absolute_url(), view.context.file.filename)}"
-        width="100%" height="100%" style="height:600px">
-    This browser does not support PDFs. Please download the PDF to view it:
-    <a href="${python:'%s/@@display-file/file/%s' %(view.context.absolute_url(), view.context.file.filename)}">Download PDF</a>
-</iframe>
-
+    <iframe src="${python:'%s/@@display-file/file/%s' %(view.context.absolute_url(), view.context.file.filename)}"
+          width="100%" height="100%" style="height:600px">
+          This browser does not support PDFs. Please download the PDF to view it:
+        <a href="${python:'%s/@@display-file/file/%s' %(view.context.absolute_url(), view.context.file.filename)}">Download PDF</a>
+    </iframe>
   </div>
 </div>
+  </tal:paid>
 
+</tal:paid>
 
 </metal:content-core>
 </metal:content-core>
