@@ -12,22 +12,33 @@
 <metal:content-core define-macro="content-core"
                     tal:define="toc context/table_of_contents|nothing;">
 
-<!--
-<p tal:condition="view/paid">有付費或是時間已過兩個月</p>
-<p tal:condition="not: view/paid">未付年費或時間尚未到</p>
--->
 <div id="core-block">
-<tal:cond condition="view/paid">
-<iframe src="${python:'%s/@@display-file/file/%s' %(view.context.absolute_url(), view.context.file.filename)}" 
-        width="100%" height="100%" style="height:600px">
-    This browser does not support PDFs. Please download the PDF to view it: 
-    <a href="${python:'%s/@@display-file/file/%s' %(view.context.absolute_url(), view.context.file.filename)}">Download PDF</a>
-</iframe>
-</tal:cond>
 
-<tal:cond condition="not:view/paid">
-<h3>您未登錄為有效會員/或本篇尚未開放</h3>
-</tal:cond>
+<h3>本期目錄</h3>
+<hr>
+    <tal:results define="batch context/getChildNodes">
+      <tal:listing condition="batch">
+        <div class="entries">
+          <tal:repeat repeat="item batch">
+<div class="article-item">
+<a href="${item/absolute_url}"><h4 href="${item/absolute_url}"><b>${item/title}</b></h4></a>
+<br>
+<div tal:content="structure item/metaData/raw"></div>
+<div style="display:none" class="article-abs">
+ <div tal:replace="structure item/abstract/raw" />
+</div>
+<a href="javascript:void(0)" class="btn btn-info show-abs">閱讀摘要</a>
+<hr>
+</div>
+          </tal:repeat>
+        </div>
+
+      </tal:listing>
+    </tal:results>
+
+
+
+
 </div>
 
 </metal:content-core>
