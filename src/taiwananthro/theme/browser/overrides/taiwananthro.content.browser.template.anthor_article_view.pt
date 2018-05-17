@@ -17,7 +17,8 @@
 
 <tal:paid switch="view/paid">
   <tal:notPaid case="False">
-    <p>本文為付費文章</p>
+    <p>「您好，本篇尚未開放非活動會員瀏覽。若您為活動會員，請登入您的會員身份，謝謝！</p>
+    <p>活動會員為本年度之繳費會員，您亦可至會員專區查詢您的會員身分。<a href="${portal_url}/login">會員登入</a></p>
   </tal:notPaid>
 
 

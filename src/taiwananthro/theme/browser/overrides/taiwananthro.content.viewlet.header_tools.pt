@@ -15,4 +15,7 @@
         <li><a href="javascript:void(0)">簡體</a></li>
         <li><a href="javascript:void(0)">English</a></li>
     </ul>
+    <ul class="social-nav">
+        <li><a target="_blank" href="https://www.facebook.com/%E8%87%BA%E7%81%A3%E4%BA%BA%E9%A1%9E%E5%AD%B8%E8%88%87%E6%B0%91%E6%97%8F%E5%AD%B8%E5%AD%B8%E6%9C%83-547228922013296/"><span class="fa fa-facebook-square"></span></a></li>
+    </ul>
 </div>

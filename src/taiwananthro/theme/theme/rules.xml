@@ -103,6 +103,6 @@
   <drop css:theme-children=".top-left.col-md-4.col-sm-12.col-xs-12" />
   <drop css:theme=".preloader" />
   <drop css:content="#cover-slider-viewlet" css:if-not-content=".template-cover" />
-
+  <drop css:content="#portal-breadcrumbs" css:if-content=".template-logged_out, .template-login_form" />
 </rules>
 </rules>
