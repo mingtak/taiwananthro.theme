@@ -24,36 +24,43 @@
       <tal:listing condition="batch">
         <div class="entries" metal:define-slot="entries">
           <tal:repeat repeat="item batch" metal:define-macro="entries">
-            <tal:block tal:define="obj item/getObject;
+            <tal:block
+                tal:condition="python:item_type in ['Document', 'AnthroReport', 'Folder']"
+                tal:define="obj item/getObject;
                 item_url item/getURL;
+                item_id item/getId;
                 item_title item/Title;
+                item_description item/Description;
                 item_type item/PortalType;
+                item_modified item/ModificationDate;
+                item_created item/CreationDate;
                 item_type_class python:'contenttype-' + view.normalizeString(item_type);
                 item_wf_state item/review_state;
                 item_wf_state_class python:'state-' + view.normalizeString(item_wf_state);
-                item_link python:item_type in view.use_view_action and item_url+'/view' or item_url;">
+                item_creator item/Creator;
+                item_link python:item_type in view.use_view_action and item_url+'/view' or item_url;
+                item_is_event python:view.is_event(obj);
+                item_has_image python:item.getIcon">
               <metal:block define-slot="entry">
                 <div class="news-block-four">
                     <div class="inner-box">
                         <div class="row clearfix">
-                            <div class="content-box col-md-8 col-sm-8 col-xs-12">
+                            <div class="content-box col-md-12 col-sm-12 col-xs-12" style="padding:0">
                                 <div class="content-inner">
                                     <h3><a tal:attributes="href item_link;
                                                         class string:$item_type_class $item_wf_state_class url;
                                                         title item_type"
-                                        tal:content="item_title" style="font-size:25px">
+                                        tal:content="item_title" style="font-size:20px">
                                     </a></h3>
-                                </div>
-                            </div>
-                            <div class="content-box col-md-4 col-sm-4 col-xs-12">
-                              <div class="content-inner">
-                                <ul class="post-meta" style="float:right">
-                                        <li style="font-size:15px">
-                                          <span class="icon fa fa-clock-o"></span>
-                                            ${python:view.toLocalizedTime(item.CreationDate())}
-                                        </li>
+                                    <ul class="post-meta">
+                                        <li style="font-size:14px"><span class="icon fa fa-clock-o"></span>
+                                        ${python:view.toLocalizedTime(item.CreationDate())}</li>
                                     </ul>
-                              </div>
+                                    <div class="text" style="word-break:break-all;font-size:15px"  
+                                         tal:content="structure python:obj.description.replace('\n', '<br>') if obj.description else ''">
+                                    </div>
+                                    
+                                </div>
                             </div>
                         </div>
                     </div>
