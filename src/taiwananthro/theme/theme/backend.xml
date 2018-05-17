@@ -131,7 +131,15 @@
     <drop css:theme="#portal-top" />
     <drop css:theme="#portal-footer-wrapper" />
 
-
+    <!-- drop edit-bar element -->
+    <drop css:content="#contentview-folderContents" />
+    <drop css:content="#contentview-edit" />
+    <drop css:content="#contentview-view" />
+    <drop css:content="#plone-contentmenu-portletmanager" />
+<!--    <drop css:content="#" />
+    <drop css:content="#" />
+    <drop css:content="#" />
+-->
   </rules>
 
 </rules>

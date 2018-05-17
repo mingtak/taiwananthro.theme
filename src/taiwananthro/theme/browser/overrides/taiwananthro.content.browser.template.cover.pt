@@ -16,15 +16,16 @@ from plone import api
 news = api.content.find(Type='News', sort_on='created', sort_order='reverse', sort_limit=5)[0:5]
 ?>
 
-                <div class="sidebar-side col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <div class="sidebar-side col-lg-6 col-md-6 col-sm-12 col-xs-12">
                         <div class="sidebar-widget categories-widget">
                             <div class="sidebar-title">
                                 <h2>最新消息</h2>
                             </div>
                             <ul class="cat-list">
                             	<li class="clearfix" tal:repeat="item view/news_brain">
-                                    <a href="${item/getURL}">${python:item.Title[0:45]}
-                                    <span>【<span tal:replace="python:item.getObject().category" i18n:translate=""/>】</span>
+                                    <a href="${item/getURL}">${python:item.Title[0:75]}
+                                      <span tal:condition="python:len(item.Title)>75" tal:replace="string:..."/>
+                                      <span>【<span tal:replace="python:item.getObject().category" i18n:translate=""/>】</span>
                                     </a>
                                 </li>
                             </ul>
@@ -33,7 +34,7 @@ news = api.content.find(Type='News', sort_on='created', sort_order='reverse', so
                	</div>
                 
                <!--Content Side-->
-                <div class="content-side col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <div class="content-side col-lg-3 col-md-3 col-sm-6 col-xs-6">
 					<div class="content">
                     	<!--Sec Title-->
                     	<div class="sidebar-title">
@@ -59,7 +60,7 @@ news = api.content.find(Type='News', sort_on='created', sort_order='reverse', so
                 </div>
                 
 <!--Content Side-->
-                <div class="content-side col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <div class="content-side col-lg-3 col-md-3 col-sm-6 col-xs-6">
 					<div class="content">
                     	<!--Sec Title-->
                     	<div class="sidebar-title">

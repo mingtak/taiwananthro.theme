@@ -48,10 +48,21 @@
                             <div class="image-column col-md-3 col-sm-3 col-xs-3">
                                 <div class="image">
                                     <a tal:attributes="href item_link">
-                                    <img    class="image-tile wow fadeIn animated"
-                                            data-wow-delay="0ms" data-wow-duration="2500ms" style="visibility: visible; animation-duration: 2500ms; animation-delay: 0ms; animation-name: fadeIn;"
-                                            tal:condition="item_has_image"
-                                            tal:attributes="src  string:$item_url/@@images/image/preview">
+<?python
+from plone import api
+portal = api.portal.get()
+?>
+<tal:img switch="item_has_image">
+                                    <img tal:case="True"
+                                         class="image-tile wow fadeIn animated"
+                                         data-wow-delay="0ms" data-wow-duration="2500ms" style="visibility: visible; animation-duration: 2500ms; animation-delay: 0ms; animation-name: fadeIn;"
+                                         tal:attributes="src  string:$item_url/@@images/image/preview">
+
+                                    <img tal:case="False"
+                                         class="image-tile wow fadeIn animated"
+                                         data-wow-delay="0ms" data-wow-duration="2500ms" style="visibility: visible; animation-duration: 2500ms; animation-delay: 0ms; animation-name: fadeIn;"
+                                         tal:attributes="src  string:${portal/absolute_url}/resource/default_image.png/@@images/image/preview">
+</tal:img>
                                     </a>
                                 </div>
                             </div>
