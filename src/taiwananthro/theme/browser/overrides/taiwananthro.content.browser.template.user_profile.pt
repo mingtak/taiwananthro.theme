@@ -7,101 +7,58 @@
     i18n:domain="taiwananthro.content">
 <body>
 
-
 <metal:content-core fill-slot="content-core">
 <metal:content-core define-macro="content-core"
                     tal:define="toc context/table_of_contents|nothing;">
-<style>
-th{
-    width: 210px;
-    padding: 10px 10px;
-    text-align: center;
-    font-size: 19px;
-}
-input{
-    width: 100%;
-    font-size: 17px;
-    padding: 10px 10px;
-    border-bottom: 1px solid grey;
-
-}
-td{
-    width: 350px;
-    padding: 10px 10px;
-    font-size: 17px;
-}
-</style>
 <?python
  from plone import api
  abs_url = api.portal.get().absolute_url()
 ?>
 
-<form action="${abs_url}/update_user_profile" method="POST" >
-    <table>
-        <tr>
-            <th>姓名</th>
-            <td>${view/fullname}</td>
-        </tr>
-        <tr>
-            <th>E-mail</th>
-            <td>${view/email}</td>
-        </tr>
-        <tr>
-            <th>生日</th>
-            <td>
-                <input type="text" value="${view/birthday}" 
-                    name='birthday' placeholder="注意格式：西元年-月-日"/>
-            </td>
-        </tr>
-        <tr>
-            <th>性別</th>
-            <td>
-                <input type="text" value="${view/gender}" name='gender'/>
-            </td>
-        </tr>
-        <tr>
-            <th>學經歷</th>
-            <td>        
-                <input type="text" value="${view/education}" name='education'/>
-            </td>
-        </tr>
-        <tr>
-            <th>現職</th>
-            <td>
-                <input type="text" value="${view/job}" name='job'/>
-            </td>
-        </tr>
-        <tr>
-            <th>戶籍地</th>
-            <td>
-                <input type="text" value="${view/registered_residence}" name='registered_residence'/>
-            </td>
-        </tr>
-        <tr>
-            <th>通訊地址</th>
-            <td>
-                <input type="text" value="${view/address}" name='address'/>
-            </td>
-        </tr>
-        <tr>
-            <th>聯絡電話</th>
-            <td>
-                <input type="text" value="${view/cellphone}" name='cellphone'/>
-            </td>
-        </tr>
-        <tr>
-            <th>會員繳費狀況</th>
-            <td>${view/is_paid}</td>
 
-        </tr>
-        <tr>
-            <th>是否為活動會員</th>
-            <td>${view/is_event_member}</td>
-        </tr>          
-    </table>
-    <input type="submit" value="更新" 
-        style="margin-top:20px;width:35%;background:green;color:white;font-size:22px;padding:20px 10px" />
-</form>
+<div class="contact-form" class="row">
+    <form method="post" action="${abs_url}/update_user_profile" id="update-user-profile">
+        <div class="clearfix col-lg-6 col-md-6 col-sm-12 col-xs-12">
+<h4>您的帳號資訊如下:</h4><br>
+<p>姓名: ${view/fullname}</p>
+<p>Email: ${view/email}</p>
+<p>繳費狀況: ${view/is_paid}</p>
+<p>是否為活動會員: ${view/is_event_member}</p>
+<hr>
+
+<h4>以下欄位若有變更，可以點選「確認送出」更新:</h4><br>
+            <div class="form-group" style="font-size:16px">
+                生日: <input type="date" name="birthday" value="${view/birthday}" placeholder="生日" required=""
+                             style="margin-left:10px;padding:5px;background-color:#ccc"
+                      />
+            </div>
+            <div class="form-group">
+                <input type="text" name="gender" value="${view/gender}" placeholder="性別" required="" />
+            </div>
+            <div class="form-group">
+                <input type="text" name="education" value="${view/education}" placeholder="學經歷" required="" />
+            </div>
+            <div class="form-group">
+                <input type="text" name="job" value="${view/job}" placeholder="現職" required="" />
+            </div>
+            <div class="form-group">
+                <input type="text" name="registered_residence" value="${view/registered_residence}" placeholder="戶籍地" required="" />
+            </div>
+            <div class="form-group">
+                <input type="text" name="address" value="${view/address}" placeholder="通訊地址" required="" />
+            </div>
+            <div class="form-group">
+                <input type="text" name="cellphone" value="${view/cellphone}" placeholder="聯絡電話" required="" />
+            </div>
+            <div class="form-group">
+                <button type="submit" class="theme-btn submit-btn">確認送出</button>
+            </div>
+
+        </div>
+
+    </form>
+</div>
+
 </metal:content-core>
 </metal:content-core>
 
