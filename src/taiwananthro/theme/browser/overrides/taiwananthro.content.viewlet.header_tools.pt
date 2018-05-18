@@ -9,6 +9,9 @@
                 </span>
             </tal:member>
         </li>
+        <li tal:condition="not:view/isAnon">
+            <a href="${view/portal/absolute_url}/@@user_profile">會員資料</a>
+        </li>
     </ul>
     <ul class="english-nav">
         <li id="tc_li" class="" ><a class="tc" href='javascript:(function(){var s=document.getElementById("tongwenlet_tw");if(s!=null){document.body.removeChild(s);}var s=document.createElement("script");s.language="javascript";s.type="text/javascript";s.src="${view/portal/absolute_url}/++theme++theme/js/bookmarklet_tw.js";s.id="tongwenlet_tw";document.body.appendChild(s);})();'>繁體</a></li>
