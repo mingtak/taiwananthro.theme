@@ -35,9 +35,18 @@
                    </a>
                 </div>
             </li>
-            <li tal:replace="structure view/createNavTree">
-                SUBTREE
-            </li>
+            <tal:li define="items python:view.createNavTree().split('</li>')">
+                <tal:repeat repeat="item python:items[:10]">
+                    <li tal:replace="structure string:$item</li>"></li>
+                </tal:repeat>
+<?python
+if context.portal_type == 'Folder':
+    url = view.view.context.absolute_url()
+else:
+    url = view.view.context.getParentNode().absolute_url()
+?>
+               <a tal:condition="python:len(items)>10" class="pull-right btn btn-info" href="${url}">所有列表</a>
+            </tal:li>
         </ul>
     </nav>
 </div>
