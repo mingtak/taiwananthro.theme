@@ -1,3 +1,20 @@
+.news-block-six .inner-box .image-box .image .overlay-box .overlay-inner {
+    height: 12%;
+    padding: 0;
+    top: initial;
+    bottom: 0px;
+    background: -webkit-linear-gradient(top,rgba(0,0,0,0.6), rgba(0,0,0,0.6))
+}
+
+.news-block-six .inner-box .image-box .image .overlay-box .overlay-inner .content {
+    padding-bottom:20px;
+    padding-left:25px;
+}
+
+.main-header .logo-outer .logo {
+    background-size: contain;
+}
+
 .news-block-six .inner-box .image-box .image .overlay-box .overlay-inner .content {
     position: relative;
     display: table-cell;

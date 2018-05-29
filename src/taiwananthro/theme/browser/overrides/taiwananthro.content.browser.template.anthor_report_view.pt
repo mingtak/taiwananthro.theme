@@ -14,7 +14,11 @@
 
 <div id="core-block">
 
-<h3>本期目錄</h3>
+<tal:download condition="view/paid">
+<h3>已開放: <a href="${context/absolute_url}/@@download/file/${context/file/filename}">全文下載</a></h3>
+</tal:download>
+
+<h3 tal:condition="context/getChildNodes">本期目錄</h3>
 <hr>
     <tal:results define="batch context/getChildNodes">
       <tal:listing condition="batch">
