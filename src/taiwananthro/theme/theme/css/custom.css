@@ -95,6 +95,15 @@ body .search-box-outer {
     display:none
 }
 
+/* 暫不生效 */
 body {
 /*    font-size: 16px; */
+}
+
+/* 小尺寸: 480px 以下 */
+@media (max-width: 480px) {
+    .news-block-six .inner-box .image-box .image .overlay-box .overlay-inner .content {
+        padding:3px 15px;
+        line-height: 20px;
+    }
 }

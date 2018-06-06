@@ -23,9 +23,8 @@ news = api.content.find(Type='News', sort_on='created', sort_order='reverse', so
                             </div>
                             <ul class="cat-list">
                             	<li class="clearfix" tal:repeat="item view/news_brain">
-                                    <a href="${item/getURL}">${python:item.Title[0:75]}
-                                      <span tal:condition="python:len(item.Title)>75" tal:replace="string:..."/>
-                                      <span>【<span tal:replace="python:item.getObject().category" i18n:translate=""/>】</span>
+                                    <a href="${item/getURL}">${python:item.Title[0:99]}
+                                      <span tal:condition="python:len(item.Title)>99" tal:replace="string:..."/>
                                     </a>
                                 </li>
                             </ul>
