@@ -95,6 +95,10 @@ body .search-box-outer {
     display:none
 }
 
+#content-core img {
+    height: auto;
+}
+
 /* 暫不生效 */
 body {
 /*    font-size: 16px; */
