@@ -17,13 +17,10 @@
 <tal:download condition="view/paid">
 <!-- <h3>已開放: <a href="${context/absolute_url}/@@download/file/${context/file/filename}">全文下載</a> </h3> -->
 <!-- 當期目錄頁不顯示 iframe -->
-    <iframe tal:condition="python:context.getParentNode().id != '01'"
-          src="${python:'%s/@@display-file/file/%s' %(view.context.absolute_url(), view.context.file.filename)}"
-          width="100%" height="100%" style="height:600px">
-          This browser does not support PDFs. Please download the PDF to view it:
-        <a href="${python:'%s/@@display-file/file/%s' %(view.context.absolute_url(), view.context.file.filename)}">Download PDF</a>
-    </iframe>
 
+<h4>
+<a target="_blank" href="${python:'%s/@@display-file/file/%s' %(view.context.absolute_url(), view.context.file.filename)}">全文下載</a>
+</h4>
 </tal:download>
 
 <h3 tal:condition="context/getChildNodes">本期目錄</h3>
