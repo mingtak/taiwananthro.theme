@@ -41,7 +41,8 @@
   <div id="pdf-tile" class="tab-pane fade">
     <h3 class="tab-h3" i18n:translate>PDF File</h3>
 
-<a target="_blank" href="${python:'%s/@@display-file/file/%s' %(view.context.absolute_url(), view.context.file.filename)}">全文下載</a>
+<a tal:condition="view/context/file"
+   target="_blank" href="${python:'%s/@@display-file/file/%s' %(view.context.absolute_url(), view.context.file.filename)}">全文下載</a>
   </div>
 </div>
   </tal:paid>
