@@ -98,6 +98,9 @@
   <!-- header tools -->
   <replace css:content="#header-tools" css:theme="#header-tools" />
 
+  <!-- footer -->
+  <replace css:theme-children="#footer-text" css:content-children="#footer-text" />
+
   <!-- drop -->
   <drop css:content="#edit-zone" />
   <drop css:theme-children=".top-left.col-md-4.col-sm-12.col-xs-12" />

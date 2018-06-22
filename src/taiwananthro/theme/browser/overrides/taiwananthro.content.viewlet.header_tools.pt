@@ -1,10 +1,15 @@
+<?python
+from plone import api
+?>
 <!--Header Tools-->
 <div tal:condition="view/isFrontend" class="top-right pull-right col-md-8 col-sm-12 col-xs-12" id="header-tools">
     <ul class="top-nav">
         <li tal:switch="view/isAnon">
             <a tal:case="True" href="${view/portal/absolute_url}/login">會員登入</a>
             <tal:member tal:case="False">
-                <span style="color:#fff">Hi, ${view/current/id}
+                <span style="color:#fff">
+                     Hi, ${python:view.current.getProperty('fullname')}
+                         ${python:'系統管理員' if 'Manager' in api.user.get_roles() else ''}
                      (<a href="${view/portal/absolute_url}/logout">登出</a> <a tal:condition="view/isMana" href="${view/portal/absolute_url}/folder_contents"> / 進入後台</a>)
                 </span>
             </tal:member>

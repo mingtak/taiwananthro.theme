@@ -1,0 +1,6 @@
+<?python
+from plone import api
+footText = api.portal.get_registry_record('taiwananthro.content.browser.TASetting.ITASetting.footer')
+?>
+
+<div id="footer-text" tal:content="structure footText"></div>
