@@ -15,14 +15,14 @@
 <div class="metadata" tal:content="structure context/metaData/raw"></div>
 <hr>
 
-<tal:paid switch="view/paid">
-  <tal:notPaid case="False">
+<tal:see switch="view/canSee">
+  <tal:cant case="False">
     <p>「您好，本篇尚未開放非活動會員瀏覽。若您為活動會員，請登入您的會員身份，謝謝！</p>
     <p>活動會員為本年度之繳費會員，您亦可至會員專區查詢您的會員身分。<a href="${portal_url}/login">會員登入</a></p>
-  </tal:notPaid>
+  </tal:cant>
 
 
-  <tal:paid case="True">
+  <tal:can case="True">
 <ul class="nav nav-tabs">
   <li class="active"><a data-toggle="tab" href="#abstract" i18n:translate="">Abstract</a></li>
   <li><a data-toggle="tab" href="#fulltext" i18n:translate="">Full Text</a></li>
@@ -45,9 +45,9 @@
    target="_blank" href="${python:'%s/@@display-file/file/%s' %(view.context.absolute_url(), view.context.file.filename)}">全文下載</a>
   </div>
 </div>
-  </tal:paid>
+  </tal:can>
 
-</tal:paid>
+</tal:see>
 
 </metal:content-core>
 </metal:content-core>

@@ -14,7 +14,7 @@
 
 <div id="core-block">
 
-<tal:download condition="view/paid">
+<tal:download condition="view/canSee">
 <!-- <h3>已開放: <a href="${context/absolute_url}/@@download/file/${context/file/filename}">全文下載</a> </h3> -->
 <!-- 當期目錄頁不顯示 iframe -->
 
