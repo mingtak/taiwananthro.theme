@@ -41,9 +41,9 @@
   <!-- Central column -->
   <replace css:theme="#content-container" method="raw">
     <xsl:variable name="central">
-      <xsl:if test="//aside[@id='portal-column-one'] and //aside[@id='portal-column-two']">content-side col-lg-6 col-md-6 col-sm-12 col-xs-12</xsl:if>
-      <xsl:if test="//aside[@id='portal-column-two'] and not(//aside[@id='portal-column-one'])">content-side col-lg-9 col-md-8 col-sm-12 col-xs-12</xsl:if>
-      <xsl:if test="//aside[@id='portal-column-one'] and not(//aside[@id='portal-column-two'])">content-side col-lg-9 col-md-8 col-sm-12 col-xs-12</xsl:if>
+      <xsl:if test="//aside[@id='portal-column-one'] and //aside[@id='portal-column-two']">content-side col-lg-4 col-md-4 col-sm-12 col-xs-12</xsl:if>
+      <xsl:if test="//aside[@id='portal-column-two'] and not(//aside[@id='portal-column-one'])">content-side col-lg-8 col-md-8 col-sm-12 col-xs-12</xsl:if>
+      <xsl:if test="//aside[@id='portal-column-one'] and not(//aside[@id='portal-column-two'])">content-side col-lg-8 col-md-8 col-sm-12 col-xs-12</xsl:if>
       <xsl:if test="not(//aside[@id='portal-column-one']) and not(//aside[@id='portal-column-two'])">content-side col-lg-12 col-md-12 col-sm-12 col-xs-12</xsl:if>
     </xsl:variable>
 
@@ -59,7 +59,7 @@
   <!-- Left column -->
   <rules css:if-content="#portal-column-one">
     <replace css:theme="#column1-container">
-        <div id="sidebar-left" class="sidebar-side col-lg-3 col-md-3 col-sm-12 col-xs-12">
+        <div id="sidebar-left" class="sidebar-side col-lg-4 col-md-4 col-sm-12 col-xs-12">
             <aside class="sidebar default-sidebar left-sidebar">
                 <xsl:copy-of css:select="#portal-column-one > *" />
             </aside>
@@ -71,7 +71,7 @@
   <!-- Right column -->
   <rules css:if-content="#portal-column-two">
     <replace css:theme="#column2-container">
-        <div id="sidebar-right" class="sidebar-side col-lg-3 col-md-3 col-sm-12 col-xs-12">
+        <div id="sidebar-right" class="sidebar-side col-lg-4 col-md-4 col-sm-12 col-xs-12">
             <aside class="sidebar default-sidebar right-sidebar">
                 <xsl:copy-of css:select="#portal-column-two > *" />
             </aside>

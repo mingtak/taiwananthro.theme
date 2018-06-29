@@ -1,3 +1,17 @@
+@media (min-width: 992px) {
+    article#content {
+        padding-left:120px;
+    }
+    .template-cover article#content {
+        padding-left:80px;
+        padding-right:80px;
+    }
+}
+
+aside.sidebar.default-sidebar.right-sidebar {
+    padding-right: 60px;
+}
+
 .news-block-six .inner-box .image-box .image .overlay-box .overlay-inner {
     height: 12%;
     padding: 0;
