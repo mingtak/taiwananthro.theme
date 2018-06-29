@@ -14,40 +14,39 @@
 
 <div id="core-block">
 
+<div class="cover-img">
+  <img src="${context/absolute_url}/@@images/cover_image">
+</div>
+
+
 <tal:download condition="view/canSee">
 <!-- <h3>已開放: <a href="${context/absolute_url}/@@download/file/${context/file/filename}">全文下載</a> </h3> -->
 <!-- 當期目錄頁不顯示 iframe -->
 
-<h4>
-<a target="_blank" href="${python:'%s/@@display-file/file/%s' %(view.context.absolute_url(), view.context.file.filename)}">全文下載</a>
-</h4>
+<p class="pull-right" style="margin-top: 30px">
+    <a target="_blank" href="${python:'%s/@@display-file/file/%s' %(view.context.absolute_url(), view.context.file.filename)}">全文下載</a>
+</p>
 </tal:download>
 
-<div class="cover-img" style="text-align: center;">
-  <img src="${context/absolute_url}/@@images/cover_image">
-</div>
 
-<h3 tal:condition="context/getChildNodes">本期目錄</h3>
-<hr>
-    <tal:results define="batch context/getChildNodes">
-      <tal:listing condition="batch">
-        <div class="entries">
-          <tal:repeat repeat="item batch">
-<div class="article-item">
-<a href="${item/absolute_url}"><h4 href="${item/absolute_url}"><b>${item/title}</b></h4></a>
-<br>
-<div tal:content="structure item/metaData/raw"></div>
-<div style="display:none" class="article-abs">
- <div tal:replace="structure item/abstract/raw" />
-</div>
-<a href="javascript:void(0)" class="btn btn-info show-abs">閱讀摘要</a>
-<hr>
-</div>
-          </tal:repeat>
+<h3 class="table-of-contents" tal:condition="context/getChildNodes">本期目錄</h3>
+
+
+
+<div tal:repeat="group view/getGroups" class="group-article">
+    <h4 class="group-name">${group}</h4>
+
+    <tal:article repeat="item context/getChildNodes">
+        <div class="article-unit" tal:condition="python:item.group == group">
+            <p>
+                <a href="${item/absolute_url}">${item/title}</a>
+                <span class="pages pull-right">${item/pages}</span>
+            </p>
+            <span class="author-name">${item/authorName}</span>
         </div>
+    </tal:article>
+</div>
 
-      </tal:listing>
-    </tal:results>
 
 
 

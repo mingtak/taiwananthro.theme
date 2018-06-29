@@ -1,3 +1,51 @@
+.group-name {
+    color: #e73f43;
+}
+
+.cover-img img {
+    width: 100%;
+}
+
+.table-of-contents {
+    text-align: center;
+}
+
+.author-name {
+    padding-left: 20px;
+}
+
+.group-name {
+    margin-bottom: 20px;
+}
+
+.group-article {
+    border-bottom: solid 1px red;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+}
+
+.article-unit {
+    padding-left: 30px;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.article-unit p {
+    margin-bottom: 0;
+}
+
+.article-unit p a {
+    color:#333;
+}
+
+.article-unit p a:hover {
+    color:#e73f43;
+}
+
+.table-of-contents {
+    margin: 50px 0 15px 0;
+}
+
 .full-article {
     margin-top: 20px;
 }
