@@ -1,3 +1,17 @@
+.full-article {
+    margin-top: 20px;
+}
+
+.article-title {
+    margin: 50px 0 30px 0;
+}
+
+.article-path {
+    border-bottom: solid 1px red;
+    padding-bottom: 15px;
+}
+
+/* 客制RWD寬度 */
 @media (min-width: 992px) {
     article#content {
         padding-left:120px;

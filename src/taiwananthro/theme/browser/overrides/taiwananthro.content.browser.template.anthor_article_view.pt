@@ -11,9 +11,20 @@
 <metal:content-core fill-slot="content-core">
 <metal:content-core define-macro="content-core"
                     tal:define="toc context/table_of_contents|nothing;">
+<?python
+parent = context.getParentNode()
+p_parent = parent.getParentNode()
+?>
+<p class="article-path">
+    <a>Home</a> >
+    <a href="${p_parent/absolute_url}">${p_parent/title}</a> >
+    <a href="${parent/absolute_url}">${parent/title}</a>
+</p>
+
+<h3 class="article-title">${context/title}</h3>
 
 <div class="metadata" tal:content="structure context/metaData/raw"></div>
-<hr>
+
 
 <tal:see switch="view/canSee">
   <tal:cant case="False">
@@ -23,28 +34,13 @@
 
 
   <tal:can case="True">
-<ul class="nav nav-tabs">
-  <li class="active"><a data-toggle="tab" href="#abstract" i18n:translate="">Abstract</a></li>
-  <li><a data-toggle="tab" href="#fulltext" i18n:translate="">Full Text</a></li>
-  <li><a data-toggle="tab" href="#pdf-tile" i18n:translate="">PDF</a></li>
-</ul>
-
-<div class="tab-content">
-  <div id="abstract" class="tab-pane fade in active">
-    <h3 class="tab-h3" i18n:translate="">Abstract</h3>
-    <div tal:content="structure context/abstract/raw"></div>
-  </div>
-  <div id="fulltext" class="tab-pane fade">
-    <h3 class="tab-h3" i18n:translate="">Full Text</h3>
-    <div tal:content="structure context/text/raw"></div>
-  </div>
-  <div id="pdf-tile" class="tab-pane fade">
-    <h3 class="tab-h3" i18n:translate>PDF File</h3>
-
-<a tal:condition="view/context/file"
-   target="_blank" href="${python:'%s/@@display-file/file/%s' %(view.context.absolute_url(), view.context.file.filename)}">全文下載</a>
-  </div>
-</div>
+    <div class="row">
+      <div class="col-xs-12">
+        <a tal:condition="view/context/file" class="pull-right"
+           target="_blank" href="${python:'%s/@@display-file/file/%s' %(view.context.absolute_url(), view.context.file.filename)}">全文下載</a>
+      </div>
+    </div>
+    <div class="full-article" tal:content="structure context/text/raw"></div>
   </tal:can>
 
 </tal:see>

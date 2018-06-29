@@ -18,7 +18,7 @@ else:
 <section tal:case="True" id="portal-breadcrumbs" class="plone-breadcrumb page-title">
     <div class="auto-container">
         <div class="clearfix">
-            <div class="pull-left">
+            <div class="pull-left" tal:condition="python:context.portal_type != 'AnthroArticle'">
                 <h2>${context/title}</h2>
             </div>
         </div>
