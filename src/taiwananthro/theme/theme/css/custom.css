@@ -216,6 +216,7 @@ body .search-box-outer {
 /* 暫不生效 */
 body {
 /*    font-size: 16px; */
+    color: #333;
 }
 
 /* 小尺寸: 480px 以下 */
@@ -224,8 +225,4 @@ body {
         padding:3px 15px;
         line-height: 20px;
     }
-}
-
-body {
-    color: #333;
 }
