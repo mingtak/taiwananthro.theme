@@ -1,4 +1,20 @@
-/*
+.news-block-six .inner-box .image-box .image {
+    overflow:hidden;
+    height:300px;
+}
+
+.news-block-six .inner-box .image-box .image img {
+    position: absolute;
+    top:-100%;
+    bottom:-100%;
+    margin: auto;
+}
+
+.main-slider-three .owl-dots {
+    top: -80px;
+}
+
+/* 主選單, Banner
 .main-header .header-lower {
     background: #ddd;
 }
@@ -121,7 +137,7 @@ aside.sidebar.default-sidebar.right-sidebar {
 }
 
 .news-block-six .inner-box .image-box .image .overlay-box .overlay-inner .content {
-    padding-bottom:20px;
+    padding-bottom:10px;
     padding-left:25px;
 }
 
