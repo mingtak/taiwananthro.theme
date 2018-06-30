@@ -1,3 +1,39 @@
+.auto-container.path {
+    padding-left: 120px;
+}
+
+.main-header .header-lower {
+    background: #ddd;
+}
+
+ul.navigation.clearfix li.current a:before {
+    z-index: 100;
+}
+
+.main-menu .navigation {
+    padding-left: 50px;
+}
+
+/* 最小生效尺寸 */
+@media only screen and (min-width: 479px) {
+    .main-header .logo-outer .logo {
+        width: 450px;
+    }
+    .main-header .logo-outer {
+        padding-bottom: 0px;
+        padding-left: 50px;
+    }
+}
+
+.template-news_listing .content-inner {
+    padding-right: 60px;
+}
+
+.news-block-four .inner-box .image-column .image {
+    padding: 0 15px 40px 25px;
+    background-color: #fff;
+}
+
 .group-name {
     color: #e73f43;
 }
@@ -186,4 +222,8 @@ body {
         padding:3px 15px;
         line-height: 20px;
     }
+}
+
+body {
+    color: #333;
 }
