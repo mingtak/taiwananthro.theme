@@ -1,14 +1,11 @@
-.auto-container.path {
-    padding-left: 120px;
-}
-
+/*
 .main-header .header-lower {
     background: #ddd;
 }
 
 ul.navigation.clearfix li.current a:before {
     z-index: 100;
-}
+} */
 
 .main-menu .navigation {
     padding-left: 50px;
@@ -16,6 +13,10 @@ ul.navigation.clearfix li.current a:before {
 
 /* 最小生效尺寸 */
 @media only screen and (min-width: 479px) {
+
+    .auto-container.path-bar {
+        padding-left: 90px;
+    }
     .main-header .logo-outer .logo {
         width: 450px;
     }
@@ -98,7 +99,8 @@ ul.navigation.clearfix li.current a:before {
 /* 客制RWD寬度 */
 @media (min-width: 992px) {
     article#content {
-        padding-left:120px;
+    /*    padding-left:120px; */
+        padding-left: 80px;
     }
     .template-cover article#content {
         padding-left:80px;
