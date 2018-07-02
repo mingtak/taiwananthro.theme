@@ -46,16 +46,26 @@
                     <div class="inner-box">
                         <div class="row clearfix">
 
+<?python
+from plone import api
+portal = api.portal.get()
+className = "content-box col-md-8 col-sm-8 col-xs-8"
+if context.getParentNode().id not in ['annual_meeting', 'anthropology_publish']:
+    className = "content-box col-md-12 col-sm-12 col-xs-12"
+imageFieldName = 'cover_image'
+if item.portal_type  == 'Folder':
+    imageFieldName = 'image'
+?>
 
-                            <div class="image-column col-md-3 col-sm-3 col-xs-3" tal:condition="python:item_type == 'AnthroReport'">
+                            <div class="image-column col-md-4 col-sm-4 col-xs-4" tal:condition="python:item_type in ['Folder', 'AnthroReport']">
                                 <div class="image">
                                     <a tal:attributes="href item_link">
-
-<tal:img switch="python:bool(item.getObject().cover_image)">
+<tal:img switch="python:bool(getattr(item.getObject(), imageFieldName, False))">
                                     <img tal:case="True"
                                          class="image-tile wow fadeIn animated"
-                                         data-wow-delay="0ms" data-wow-duration="2500ms" style="visibility: visible; animation-duration: 2500ms; animation-delay: 0ms; animation-name: fadeIn;"
-                                         tal:attributes="src  string:$item_url/@@images/cover_image/preview">
+                                         data-wow-delay="0ms" data-wow-duration="2500ms"
+                                         style="visibility: visible; animation-duration: 2500ms; animation-delay: 0ms; animation-name: fadeIn;"
+                                         tal:attributes="src string:${item_url}/@@images/${imageFieldName}/preview">
 
                                     <img tal:case="False"
                                          class="image-tile wow fadeIn animated"
@@ -66,13 +76,6 @@
                                 </div>
                             </div>
 
-<?python
-from plone import api
-portal = api.portal.get()
-className = "content-box col-md-9 col-sm-9 col-xs-9"
-if context.getParentNode().id != 'anthropology_publish':
-    className = "content-box col-md-12 col-sm-12 col-xs-12"
-?>
 
                             <div class="${className}" style="padding:0">
                                 <div class="content-inner">

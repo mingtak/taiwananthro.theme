@@ -16,7 +16,7 @@ from plone import api
 news = api.content.find(Type='News', sort_on='created', sort_order='reverse', sort_limit=5)[0:5]
 ?>
 
-                <div class="sidebar-side col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                <div class="sidebar-side col-lg-8 col-md-8 col-sm-12 col-xs-12">
                         <div class="sidebar-widget categories-widget">
                             <div class="sidebar-title">
                                 <h2>最新消息</h2>
@@ -26,6 +26,7 @@ news = api.content.find(Type='News', sort_on='created', sort_order='reverse', so
                                     <a href="${item/getURL}">${python:item.Title[0:99]}
                                       <span tal:condition="python:len(item.Title)>99" tal:replace="string:..."/>
                                     </a>
+                                    <span class="pull-right">${python:item.effective.strftime('%Y-%m-%d')}</span>
                                 </li>
                             </ul>
                             <BR><a href="${portal_url}/news/institute_news" class="theme-btn btn-style-one">more</a>
@@ -33,7 +34,7 @@ news = api.content.find(Type='News', sort_on='created', sort_order='reverse', so
                	</div>
                 
                <!--Content Side-->
-                <div class="content-side col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <div class="content-side col-lg-2 col-md-2 col-sm-6 col-xs-12">
 					<div class="content">
                     	<!--Sec Title-->
                     	<div class="sidebar-title">
@@ -59,7 +60,7 @@ news = api.content.find(Type='News', sort_on='created', sort_order='reverse', so
                 </div>
                 
 <!--Content Side-->
-                <div class="content-side col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <div class="content-side col-lg-2 col-md-2 col-sm-6 col-xs-12">
 					<div class="content">
                     	<!--Sec Title-->
                     	<div class="sidebar-title">
