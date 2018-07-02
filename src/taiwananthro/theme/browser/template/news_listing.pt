@@ -50,6 +50,7 @@
                                     <a tal:attributes="href item_link">
 <?python
 from plone import api
+from bs4 import BeautifulSoup
 portal = api.portal.get()
 ?>
 <tal:img switch="item_has_image">
@@ -81,8 +82,9 @@ portal = api.portal.get()
                                         ${python:view.toLocalizedTime(item.CreationDate())}</li>
                                     </ul>
                                     <div class="text" style="word-break:break-all;font-size:15px"  
-                                         tal:define="richtext python:''.join(item.getObject().richtext.raw.replace('<br>', '').split())"
-                                         tal:content="structure python:'%s%s' %(richtext[:120], '...')">
+                                         tal:define="richtext python:''.join(item.getObject().richtext.raw.replace('<br>', '').split());
+                                                     soup python:BeautifulSoup(richtext, 'lxml')"
+                                         tal:content="python:'%s%s' % (soup.get_text()[:40], '...')">
                                         
                                     </div>
                                     
