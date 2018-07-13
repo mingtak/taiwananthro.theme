@@ -1,3 +1,12 @@
+#content-core ul, #content-core li {
+    list-style: initial;
+}
+
+#content-core ul li ul li {
+    margin-left: 20px;
+    list-style-type: circle
+}
+
 .navigation.clearfix li a {
     padding:8px 24px;
 }

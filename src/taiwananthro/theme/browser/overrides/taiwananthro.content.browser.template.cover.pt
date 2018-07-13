@@ -34,7 +34,7 @@ news = api.content.find(Type='News', sort_on='created', sort_order='reverse', so
                	</div>
                 
                <!--Content Side-->
-                <div class="content-side col-lg-2 col-md-2 col-sm-6 col-xs-12">
+                <div class="content-side col-lg-2 col-md-2 col-sm-6 col-xs-6">
 					<div class="content">
                     	<!--Sec Title-->
                     	<div class="sidebar-title">
@@ -60,7 +60,7 @@ news = api.content.find(Type='News', sort_on='created', sort_order='reverse', so
                 </div>
                 
 <!--Content Side-->
-                <div class="content-side col-lg-2 col-md-2 col-sm-6 col-xs-12">
+                <div class="content-side col-lg-2 col-md-2 col-sm-6 col-xs-6">
 					<div class="content">
                     	<!--Sec Title-->
                     	<div class="sidebar-title">

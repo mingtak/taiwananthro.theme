@@ -23,7 +23,7 @@ p_parent = parent.getParentNode()
 
 <h3 class="article-title">${context/title}</h3>
 
-<div class="metadata" tal:content="structure context/metaData/raw"></div>
+<div class="metadata" tal:content="structure context/metaData/raw | nothing"></div>
 
 
 <tal:see switch="view/canSee">
@@ -40,7 +40,7 @@ p_parent = parent.getParentNode()
            target="_blank" href="${python:'%s/@@display-file/file/%s' %(view.context.absolute_url(), view.context.file.filename)}">全文下載</a>
       </div>
     </div>
-    <div class="full-article" tal:content="structure context/text/raw"></div>
+    <div class="full-article" tal:content="structure context/text/raw | nothing"></div>
   </tal:can>
 
 </tal:see>
