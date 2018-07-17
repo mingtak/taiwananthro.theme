@@ -18,9 +18,9 @@
   <img src="${context/absolute_url}/@@images/cover_image">
 </div>
 
+<div class="contents">
 
 <tal:download condition="view/canSee">
-<!-- <h3>已開放: <a href="${context/absolute_url}/@@download/file/${context/file/filename}">全文下載</a> </h3> -->
 <!-- 當期目錄頁不顯示 iframe -->
 
 <p class="pull-right" style="margin-top: 30px">
@@ -34,7 +34,7 @@
 
 
 <div tal:repeat="group view/getGroups" class="group-article">
-    <h4 class="group-name">${group}</h4>
+    <h4 class="group-name">${group}&nbsp;</h4>
 
     <tal:article repeat="item context/getChildNodes">
         <div class="article-unit" tal:condition="python:item.group == group">
@@ -48,7 +48,7 @@
 </div>
 
 
-
+</div>
 
 
 </div>

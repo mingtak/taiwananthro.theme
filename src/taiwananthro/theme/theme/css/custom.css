@@ -1,3 +1,16 @@
+.template-anthro_report_view .pages{
+    font-size: 12px;
+}
+
+.template-anthro_report_view .author-name {
+    font-size: 14px;
+}
+
+.template-anthro_report_view .contents {
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
 #content-core ul, #content-core li {
     list-style: initial;
 }
