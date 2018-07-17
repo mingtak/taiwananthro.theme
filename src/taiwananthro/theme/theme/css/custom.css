@@ -2,6 +2,10 @@
     list-style: initial;
 }
 
+.template-cover #content-core ul, #content-core li {
+    list-style: none;
+}
+
 #content-core ul li ul li {
     margin-left: 20px;
     list-style-type: circle
