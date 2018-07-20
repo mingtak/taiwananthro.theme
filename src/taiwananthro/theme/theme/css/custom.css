@@ -1,3 +1,9 @@
+.template-search #search-results li {
+    list-style: none;
+    margin: 5px 0;
+    font-size: 16px;
+}
+
 #form-widgets-newPassword {
     display: block;
     width: 20%;
