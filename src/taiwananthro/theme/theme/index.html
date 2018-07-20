@@ -254,9 +254,14 @@
                                 <ul class="dropdown-menu pull-right search-panel" aria-labelledby="dropdownMenu1">
                                     <li class="panel-outer">
                                         <div class="form-container">
-                                            <form method="post" action="blog.html">
+                                            <form method="post" action="/taiwananthro/@@search">
                                                 <div class="form-group">
-                                                    <input type="search" name="field-name" value="" placeholder="請輸入關鍵字搜尋" required>
+                                                    <input type="search" name="SearchableText" value="" placeholder="請輸入關鍵字搜尋" required>
+    <input type="hidden" name="Type:list" value="Document">
+    <input type="hidden" name="Type:list" value="News">
+    <input type="hidden" name="Type:list" value="Disseration">
+    <input type="hidden" name="Type:list" value="AnthroReport">
+    <input type="hidden" name="Type:list" value="AnthroArticle">
                                                     <button type="submit" class="search-btn"><span class="fa fa-search"></span></button>
                                                 </div>
                                             </form>

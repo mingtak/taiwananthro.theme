@@ -1,43 +1,5 @@
-#form-widgets-newPassword {
-    display: block;
-    width: 20%;
-    margin: 10px 0;
-    line-height: 22px;
-    height: 30px;
-    font-size: 16px;
-    padding: 12px 5px;
-    background: #ffffff;
-    color: #333333;
-    border: 2px solid #e0e0e0;
-    transition: all 500ms ease;
-    -webkit-transition: all 500ms ease;
-    -ms-transition: all 500ms ease;
-    -o-transition: all 500ms ease;
-}
-
-.template-anthro_article_view .author-name {
-    padding-left: 0;
-}
-
-.template-anthro_report_view .pages{
-    font-size: 12px;
-}
-
-.template-anthro_report_view .author-name {
-    font-size: 14px;
-}
-
-.template-anthro_report_view .contents {
-    padding-left: 12px;
-    padding-right: 12px;
-}
-
 #content-core ul, #content-core li {
     list-style: initial;
-}
-
-.template-cover #content-core ul, .template-cover #content-core li {
-    list-style: none;
 }
 
 #content-core ul li ul li {
@@ -157,7 +119,7 @@ ul.navigation.clearfix li.current a:before {
 }
 
 .article-title {
-    margin: 50px 0 10px 0;
+    margin: 50px 0 30px 0;
 }
 
 .article-path {
@@ -266,11 +228,7 @@ div.styled-pagination ul.clearfix li.active span {
 }
 
 body .search-box-outer {
-/*    display:none !important; */
-}
-
-.main-header .header-lower .search-box-outer {
-    padding-top: 15px;
+    display:none !important;
 }
 
 #login-form input {

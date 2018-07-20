@@ -22,7 +22,7 @@ p_parent = parent.getParentNode()
 </p>
 
 <h3 class="article-title">${context/title}</h3>
-
+<p class="author-name">${context/authorName}</p>
 <div class="metadata" tal:content="structure context/metaData/raw | nothing"></div>
 
 

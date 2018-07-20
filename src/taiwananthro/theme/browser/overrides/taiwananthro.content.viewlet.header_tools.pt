@@ -15,7 +15,8 @@ from plone import api
             </tal:member>
         </li>
         <li tal:condition="not:view/isAnon">
-            <a href="${view/portal/absolute_url}/@@user_profile">會員資料</a>
+            <a href="${view/portal/absolute_url}/@@user_profile">會員資料</a> <a>/</a>
+            <a href="${view/portal/absolute_url}/@@update_password_self">變更密碼</a>
         </li>
     </ul>
     <ul class="english-nav">
