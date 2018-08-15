@@ -1,3 +1,7 @@
+.template-cover .owl-item .content a {
+    color: #fff;
+}
+
 .template-search #search-results li {
     list-style: none;
     margin: 5px 0;
@@ -57,7 +61,7 @@
 
 .news-block-six .inner-box .image-box .image {
     overflow:hidden;
-    height:340px;
+    height:425px;
 }
 
 .news-block-six .inner-box .image-box .image img {
