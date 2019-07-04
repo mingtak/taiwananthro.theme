@@ -43,7 +43,8 @@
 }
 
 #content-core ul, #content-core li {
-    list-style: initial;
+/*    list-style: initial; */
+    list-style: inherit;
 }
 
 .template-cover #content-core ul, .template-cover #content-core li {
@@ -340,4 +341,12 @@ body {
         margin: 0;
     }
 
+}
+
+#content-core table td {
+  border: 1px solid #bbb;
+  padding: 5px;
+}
+ul {
+  padding-inline-start: 40px;
 }
