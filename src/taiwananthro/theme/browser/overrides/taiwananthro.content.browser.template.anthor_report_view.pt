@@ -11,7 +11,11 @@
 <metal:content-core fill-slot="content-core">
 <metal:content-core define-macro="content-core"
                     tal:define="toc context/table_of_contents|nothing;">
-
+<?python
+from plone import api
+is_anonymous = api.user.is_anonymous()
+canSee = not is_anonymous or context.getParentNode().id == '02'
+?>
 <div id="core-block">
 
 <div class="cover-img">
@@ -20,13 +24,16 @@
 
 <div class="contents">
 
-<tal:download condition="view/canSee">
+<tal:download condition="python:view.canSee() or view.is02()">
 <!-- 當期目錄頁不顯示 iframe -->
 
 <p class="pull-right" style="margin-top: 30px">
-    <a target="_blank" href="${python:'%s/@@display-file/file/%s' %(view.context.absolute_url(), view.context.file.filename)}">全文下載</a>
+    <a target="_blank" href="${python:'%s/@@display-file/file/%s' %(view.context.absolute_url(), view.context.file.filename)}"
+       tal:condition="canSee"> 全文下載</a>
 </p>
 </tal:download>
+
+<a href="${portal_url}/login" tal:condition="not:canSee" style='float: right;margin-top: 30px'>全文下載</a>
 
 
 <h3 class="table-of-contents" tal:condition="context/getChildNodes">本期目錄</h3>
